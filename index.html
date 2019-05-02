@@ -52,16 +52,16 @@
 			</div>
 		</div>
 		<div id="frame-div" class="col-8 frame-fixer">
-			<div class="tab">
+			<label for="selecionar-imagem" class="btn right" type="file"><i class="fa fa-picture-o"></i> Trocar Fundo</label>
+			<input id="selecionar-imagem" type="file"/ style="display:none;">
+			<button class="btn right"><i class="fa fa-play"></i> Visualizar</button>
+			<button class="btn right"><i class="fa fa-download"></i> Exportar</button>
+			<div class="tab">		
 				<button class="tablinks" onclick="openTab(event, 'Jornada')"
 					id="defaultOpen">Jornada</button>
 				<button class="tablinks" onclick="openTab(event, 'Cena')">Cena</button>
 				<button class="tablinks" onclick="openTab(event, 'Desafio')">Desafio</button>
 			</div>
-			<label for="selecionar-imagem" class="btn right" type="file"><i class="fa fa-picture-o"></i> Trocar Fundo</label>
-			<input id="selecionar-imagem" type="file"/ style="display:none;">
-			<button class="btn right"><i class="fa fa-play"></i> Visualizar</button>
-			<button class="btn right"><i class="fa fa-download"></i> Exportar</button>
 			<div id="Jornada" class="frame tabcontent"></div>
 			<div id="Cena" class="frame tabcontent"></div>
 			<div id="Desafio" class="frame tabcontent"></div>

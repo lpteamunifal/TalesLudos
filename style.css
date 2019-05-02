@@ -327,7 +327,7 @@ button.delete{
 
 .tabcontent {
 	background-color: white;
-	display: none;
+	display: inline-block;
 	overflow: hidden;
 }
 /*End*/
@@ -355,6 +355,7 @@ button.delete{
 	font-size: 15px;
 	background-color: #b9deff;
 	margin-right: 5px;
+	margin-bottom: 3px;
 	border-radius: 10px;
 	border: none;
 	outline: none;
@@ -461,17 +462,29 @@ button.upload_button {
 }
 
 @media screen and (max-width: 1000px) {
+	/*Caso utilizemos bootstrap devemos retirar os seguintes argumentos*/
 	.bar.responsive {
-		position: relative;
+		position: absolute;	 	/* position se torna relative*/
+    		display: block;
+		width: 90%;
+		height: 100%;
+		opacity: 1;			/* opacity não é mais necessário*/
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		background-color: #e6f3ff;	/* background-color não é mais necessário*/
 	}
 	.bar.responsive a.icon {
 		position: absolute;
-		right: 0;
+		left: 0;
 		top: 0;
 	}
 	.bar.responsive div {
 		float: none;
 		display: block;
+		overflow: scroll;
 	}
 }
 
