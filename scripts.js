@@ -37,6 +37,16 @@ $(window).resize(function(){
     }
     $('.frame').css('width','100%');
     $('.frame').height($('.frame').width() / 2.031);
+    
+    var resizeWidth = document.getElementById('Jornada').clientWidth;
+    var resizeHeight = document.getElementById('Jornada').clientHeight;
+    
+    var scale = resizeWidth / journeyStage.width();
+    
+    journeyStage.width(resizeWidth);
+    journeyStage.height(resizeHeight);
+    //journeyStage.scale({x: scale, y: scale});
+    journeyStage.draw();
 });
 
 function menu() {
@@ -201,4 +211,8 @@ function closeModal(modalName){
 function login_function(){
    document.getElementById("modal-login").style.display = "block";
 }
+
+function register_function(){
+	   document.getElementById("modal-register").style.display = "block";
+	}
 
