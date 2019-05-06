@@ -1,8 +1,8 @@
-var stageWidth = document.getElementById('Jornada').clientWidth;
-var stageHeight = document.getElementById('Jornada').clientHeight;
+var stageWidth = document.getElementById('box-jornada').clientWidth;
+var stageHeight = document.getElementById('box-jornada').clientHeight;
 
 window.journeyStage = new Konva.Stage({
-	container: 'Jornada',
+	container: 'box-jornada',
 	width: stageWidth,
 	height: stageHeight
 });

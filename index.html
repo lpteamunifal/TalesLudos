@@ -59,13 +59,27 @@
 				<button class="tablinks" onclick="openTab(event, 'Cena')">Cena</button>
 				<button class="tablinks" onclick="openTab(event, 'Desafio')">Desafio</button>
 			</div>
-			<label for="selecionar-imagem" class="btn right" type="file"><i class="fa fa-picture-o"></i> Trocar Fundo</label>
-			<input id="selecionar-imagem" type="file"/ style="display:none;">
 			<button class="btn right"><i class="fa fa-play"></i> Visualizar</button>
 			<button class="btn right"><i class="fa fa-download"></i> Exportar</button>
-			<div id="Jornada" class="frame tabcontent"></div>
-			<div id="Cena" class="frame tabcontent"></div>
-			<div id="Desafio" class="frame tabcontent"></div>
+			<div id="Jornada" class="frame1 tabcontent">
+				<div class="tool-bar">
+					<div class="tool-bar-item active">
+						<label for="selecionar-imagem" class="" type="file"><i class="fa fa-picture-o"></i></label>
+						<input id="selecionar-imagem" type="file" style="display:none;">
+					</div>
+					<div class="tool-bar-item active">
+						<button class="btn-tool"><i class="fa fa-picture-o"></i></button>
+					</div>
+				</div>
+				<div id="box-jornada" class="frame"></div>
+			</div>
+			<div id="Cena" class="frame1 tabcontent">
+				<div style="height: 30px"></div>
+				<div class="frame"></div>
+			</div>
+			<div id="Desafio" class="frame1 tabcontent">
+				<div class="frame"></div>
+			</div>
 		</div>
 	</div>
 

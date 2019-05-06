@@ -38,8 +38,8 @@ $(window).resize(function(){
     $('.frame').css('width','100%');
     $('.frame').height($('.frame').width() / 2.031);
     
-    var resizeWidth = document.getElementById('Jornada').clientWidth;
-    var resizeHeight = document.getElementById('Jornada').clientHeight;
+    var resizeWidth = document.getElementById('box-jornada').clientWidth;
+    var resizeHeight = document.getElementById('box-jornada').clientHeight;
     
     var scale = resizeWidth / journeyStage.width();
     
@@ -194,8 +194,8 @@ $("#selecionar-imagem").change(function(){
 	var file = this.files[0];
     var reader = new FileReader();
     reader.onloadend = function () {
-       $('#Jornada').css('background-image', 'url("' + reader.result + '")');
-       $('#Jornada').css('background-size', 'cover');
+       $('#box-jornada').css('background-image', 'url("' + reader.result + '")');
+       $('#box-jornada').css('background-size', 'cover');
     }
     if (file) {
         reader.readAsDataURL(file);
