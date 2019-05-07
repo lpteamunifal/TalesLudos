@@ -190,7 +190,7 @@ function deleteDesafio(evt, desafio) {
     modal.parentNode.removeChild(modal);
 }
 
-$("#selecionar-imagem").change(function(){
+$("#file-input").change(function(){
 	var file = this.files[0];
     var reader = new FileReader();
     reader.onloadend = function () {
@@ -201,6 +201,10 @@ $("#selecionar-imagem").change(function(){
         reader.readAsDataURL(file);
     } else {
     }
+});
+
+$('#btn-backgroud').on('click', function() {
+    $('#file-input').trigger('click');
 });
 
 function closeModal(modalName){
