@@ -1,10 +1,24 @@
 class Scene {
 
-    constructor(name, element) {
+    constructor(id, name, konvaObject) {
+    	this.id =  id;
         this.name = name;
-        this.element = element;
+        //Elemento do menu de cenas lateral no html
+        this.element = "";
+        //Conteudo da cena em html
+        this.container = "";
+        this.konvaObject = konvaObject;
+        this.nextScene = null;
         this.challengeNumber = 0;
-        this.challenge = new Array();
+        this.challenge = [];
+    }
+    
+    get getId(){
+    	return this.id;
+    }
+    
+    set setId(id){
+    	this.id = id;
     }
 
     get getName(){
@@ -21,6 +35,22 @@ class Scene {
 
     set setElement(element){
         this.element = element;
+    }
+    
+    get getContainer(){
+    	return this.container;
+    }
+    
+    set setContainer(container){
+    	this.container = container;
+    }
+    
+    get getKonvaObject(){
+    	return this.konvaObject;
+    }
+    
+    set setKonvaObject(konvaObject){
+    	this.konvaObject = konvaObject;
     }
 
     get getChallengeNumber(){

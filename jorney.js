@@ -3,7 +3,7 @@ class Jorney {
     constructor(name){
         this.name = name;
         this.sceneNumber = 0;
-        this.scene = new Array();
+        this.scenes = [];
     }
 
     get getName(){
@@ -21,33 +21,42 @@ class Jorney {
     set setSceneNumber(sceneNumber){
         this.sceneNumber = sceneNumber;
     }
-
-    get getScene(){
-        return this.scene;
+    
+    get getScenes(){
+        return this.scenes;
     }
 
-    set setScene(scene){
-        this.scene = scene;
+    set setScenes(scene){
+        this.scenes = scenes;
+    }
+    
+    getSceneById(id)
+    {
+    	return this.scenes[id];
     }
 
-    get getNextSceneNumber(){
+    getNextSceneNumber(){
         this.sceneNumber++;
         return this.sceneNumber;
     }
+    
+    addScene(scene){
+    	this.scenes.push(scene);
+    }
 
     getSceneByName(name){
-        for(var i = 0; i < this.scene.length; i++){
-            if(this.scene[i].getName == name){
-                return this.scene[i];
+        for(var i = 0; i < this.scenes.length; i++){
+            if(this.scenes[i].getName == name){
+                return this.scenes[i];
             }
         }
         return null;
     }
 
     deleteSceneByName(name){
-        for(var i = 0; i < this.scene.length; i++){
-            if(this.scene[i].getName == name){
-                this.scene.splice(i, 1);
+        for(var i = 0; i < this.scenes.length; i++){
+            if(this.scenes[i].getName == name){
+                this.scenes.splice(i, 1);
                 return true;
             }
         }
