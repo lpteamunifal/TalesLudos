@@ -63,15 +63,24 @@
 			<button class="btn right"><i class="fa fa-download"></i> Exportar</button>
 			<div id="Jornada" class="frame1 tabcontent">
 				<div class="tool-bar">
-					<div class="tool-bar-item">
-						<button class="btn-tool" style="padding-left: 7px; padding-right: 3px"><i class="fa fa-arrows"></i></button>
+					<div class="tool-bar-item">						
+						<div class="tooltip">
+							<button class="btn-tool" style="padding-left: 7px; padding-right: 3px"><i class="fa fa-arrows"></i></button>
+							<span class="tooltiptext">Mover</span>
+						</div>
 					</div>
 					<div class="tool-bar-item">
-						<button class="btn-tool" style="font-size: 18px; padding-left: 6px; padding-right: 1px"><i class="fa fa-exchange"></i></button>
+						<div class="tooltip">
+							<button class="btn-tool" style="font-size: 18px; padding-left: 6px; padding-right: 1px"><i class="fa fa-exchange"></i></button>
+							<span class="tooltiptext">Conectar</span>
+						</div>
 					</div>
 					<div class="tool-bar-item">
-						<button id="btn-backgroud" class="btn-tool"><i class="fa fa-picture-o"></i></button>
-						<input id="file-input" type="file" style="display:none;">
+						<div class="tooltip">
+							<button id="btn-backgroud" class="btn-tool"><i class="fa fa-picture-o"></i></button>
+							<input id="file-input" type="file" style="display:none;">
+						<span class="tooltiptext">Imagem</span>
+						</div>
 					</div>
 				</div>
 				<div id="box-jornada" class="frame"></div>
@@ -176,5 +185,7 @@
 	<script src="scene.js"></script>
 	<script src="./scripts.js"></script>
 	<script src='./konvaScripts.js'></script>
+
+
 </body>
 </html>
