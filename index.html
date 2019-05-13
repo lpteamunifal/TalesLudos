@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Prototipo</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Prototipo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <body class="container-fluid">
 	<div class="topnav">
@@ -87,7 +88,7 @@
 			</div>
 			<div id="Cena" class="frame1 tabcontent">
 				<div style="height: 30px">
-					  <img src="./img/coracao.png" alt="coracao" width="25" align="center">
+					<img src="./img/coracao.png" alt="coracao" width="25" align="center">
 					  <select id="sel_life">
 						  <option selected>0</option>
 						  <option>1</option>
@@ -101,9 +102,15 @@
 						  <option>9</option>
 						  <option>10</option>
 					  </select>
-
 				</div>
-				<div class="frame"></div>
+				<div class="frame">
+                    <!-- Create the editor container -->
+                    <div id="editor">
+                        <p>Hello World!</p>
+                        <p>Some initial <strong>bold</strong> text</p>
+                        <p><br></p>
+                    </div>
+                </div>
 			</div>
 			<div id="Desafio" class="frame1 tabcontent">
 				<div class="frame"></div>
@@ -172,7 +179,35 @@
 		 	</form>	
 		</div>
     </div>
-  
+
+	<!-- Include the Quill library -->
+	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+	<script>
+		//Tool bar buttons
+        var toolbarOptions = [
+            [{ 'size': ['small', false, 'large', 'huge'] }],	// custom dropdown
+            [{ 'font': [] }],									// font tyoe
+
+            ['bold', 'italic', 'underline', { 'color': [] }, { 'background': [] }],// toggled buttons
+            [{ 'align': [] }],									// text align
+            [{ 'list': 'ordered'}, { 'list': 'bullet' },{ 'indent': '+1'}, { 'indent': '-1' }],// indent
+
+            ['blockquote', 'code-block'],						// code block
+            [{ 'direction': 'rtl' }],                         // text direction
+
+            ['clean'],
+
+            ['link', 'image', 'video', 'formula']
+        ];
+        //Initialize Quill editor
+        var quill = new Quill('#editor', {
+            modules: {
+                toolbar: toolbarOptions
+            },
+            theme: 'snow'
+        });
+	</script>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

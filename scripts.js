@@ -35,8 +35,11 @@ $(window).resize(function(){
         if(x.className === "col-10 frame-fixer")
             x.className = "col-8 frame-fixer";
     }
+
     $('.frame').css('width','100%');
     $('.frame').height($('.frame').width() / 2.031);
+    console.log($('.frame').width());
+    console.log($('.frame').height());
     
     var resizeWidth = document.getElementById('box-jornada').clientWidth;
     var resizeHeight = document.getElementById('box-jornada').clientHeight;
