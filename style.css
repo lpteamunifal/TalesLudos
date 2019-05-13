@@ -340,11 +340,18 @@ button.delete{
 }
 
 .frame {
+	position: relative;
+	width: 100%;
+	margin-right: 50px;
+	padding-right: 0px;
+	padding-bottom: 0;
+}
+
+.frame1 {
 	background-color: white;
 	border-style: solid;
 	border-width: thin;
 	border-color: #003990;
-	position: relative;
 	width: 100%;
 	margin-right: 50px;
 	padding-right: 0px;
@@ -370,13 +377,6 @@ button.delete{
 
 .right {
 	float: right;
-}
-
-button.upload_button {
-	background-image: url("./img/upload_image.png") no-repeat;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 /*Modal*/
@@ -490,4 +490,43 @@ input[type = text], input[type = password] {
 	margin-bottom: 10px;
 	background: #0099f6;
 	color: white;
+}
+
+.tool-bar{
+	height: 30px;
+	background-color: #cccccc;
+	box-shadow: 0px 2px 3px #888888;
+	padding: 6px;
+	padding-top: 8px;
+	padding-bottom: 0px;
+	margin: 0px;
+}
+
+.tool-bar-item{
+	display: inline;
+	height: 20px;
+	width: 20px;
+	margin: 0px 3px;
+	padding: 2px 0px 2px 0px;
+	border-style: solid;
+	border-width: thin;
+	border-color: #444444;
+	border-radius: 3px;
+}
+
+.btn-tool{
+	background-color: inherit;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+.tool-bar-item:hover{
+	background-color: #dddddd;
+}
+
+.tool-bar-item.active{
+	background-color: #aaaaaa;
+	color: black;
 }
