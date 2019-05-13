@@ -1,8 +1,8 @@
-var stageWidth = document.getElementById('Jornada').clientWidth;
-var stageHeight = document.getElementById('Jornada').clientHeight;
+var stageWidth = document.getElementById('box-jornada').clientWidth;
+var stageHeight = document.getElementById('box-jornada').clientHeight;
 
 window.journeyStage = new Konva.Stage({
-	container: 'Jornada',
+	container: 'box-jornada',
 	width: stageWidth,
 	height: stageHeight
 });
@@ -88,7 +88,6 @@ window.addSceneCircleInJourney = function (sceneNumber)
 	scenesLayer.add(group);
 	scenesLayer.draw();
 
-
 	/*
 	group.on('click tap', function() {
 		var pos = journeyStage.getPointerPosition();
@@ -147,17 +146,18 @@ window.addSceneCircleInJourney = function (sceneNumber)
 		});
 	});
 	
-	journeyStage.on('click tap', function(e){
-		if(e.target.getClassName() != "Group")
-		{
-			scenesLayer.find('Transformer').destroy();
-			scenesLayer.draw();
-		}
-			
-	});
+	return group;
 
 	//AddLink(scenesLayer);
 }
+
+journeyStage.on('click tap', function(e){
+	if(e.target.getClassName() != "Group")
+	{
+		scenesLayer.find('Transformer').destroy();
+		scenesLayer.draw();
+	}
+});
 
 /*var anim = new Konva.Animation(function(frame) {
 		var arrow = findSuffix('2');
