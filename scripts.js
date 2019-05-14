@@ -1,3 +1,5 @@
+var tool;
+
 function openTab(evt, tab) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -224,6 +226,20 @@ function login_function(){
 }
 
 function register_function(){
-	   document.getElementById("modal-register").style.display = "block";
-	}
+   document.getElementById("modal-register").style.display = "block";
+}
 
+function selectedTool(evt) {
+    // Declare all variables
+    var i, links;
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    links = document.getElementsByClassName("tool-bar-item");
+    for (i = 0; i < links.length; i++) {
+        links[i].className = links[i].className.replace(" act", "");
+    }
+
+    tool = evt.currentTarget.parentNode.parentNode.getAttribute('id');
+
+    evt.currentTarget.parentNode.parentNode.className += " act";
+}

@@ -509,10 +509,7 @@ input[type = text], input[type = password] {
 	width: 20px;
 	margin: 0px 3px;
 	padding: 2px 0px 2px 0px;
-	border-style: solid;
-	border-width: thin;
-	border-color: #444444;
-	border-radius: 3px;
+	border: none;
 }
 
 .btn-tool{
@@ -524,18 +521,16 @@ input[type = text], input[type = password] {
 }
 
 .tool-bar-item:hover{
-	background-color: #dddddd;
+	color: #3473CD;
 }
 
-.tool-bar-item.active{
-	background-color: #aaaaaa;
-	color: black;
+.act{
+	color: #3473CD;
 }
 
 .tooltip {
     position: relative;
     display: inline-block;
-   
 }
 
 /* Tooltip text */
@@ -549,7 +544,7 @@ input[type = text], input[type = password] {
     border-radius: 3px;
  	font-size: 12px;
  	right: -10px;	
- 	margin: 10px 0px 0px 0px; 
+ 	margin: 8px 0px 0px 0px;
 
     /* Position the tooltip text - see examples below! */
     position: absolute;

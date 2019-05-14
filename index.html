@@ -64,21 +64,21 @@
 			<button class="btn right"><i class="fa fa-download"></i> Exportar</button>
 			<div id="Jornada" class="frame1 tabcontent">
 				<div class="tool-bar">
-					<div class="tool-bar-item">						
+					<div id="t1" class="tool-bar-item act">
 						<div class="tooltip">
-							<button class="btn-tool" style="padding-left: 7px; padding-right: 3px"><i class="fa fa-arrows"></i></button>
-							<span class="tooltiptext">Mover</span>
+							<button class="btn-tool" onclick="selectedTool(event)" style="padding-left: 7px; padding-right: 3px; color: inherit;"><i class="fa fa-arrows"></i></button>
+							<span class="tooltiptext" style="right: -55px">Redimensionar</span>
 						</div>
 					</div>
-					<div class="tool-bar-item">
+					<div id="t2" class="tool-bar-item">
 						<div class="tooltip">
-							<button class="btn-tool" style="font-size: 18px; padding-left: 6px; padding-right: 1px"><i class="fa fa-exchange"></i></button>
-							<span class="tooltiptext">Conectar</span>
+							<button class="btn-tool" onclick="selectedTool(event)" style="font-size: 18px; padding-left: 6px; padding-right: 1px; color: inherit;"><i class="fa fa-exchange"></i></button>
+							<span class="tooltiptext" style="right: -20px;">Conectar</span>
 						</div>
 					</div>
-					<div class="tool-bar-item">
+					<div id="t3" class="tool-bar-item">
 						<div class="tooltip">
-							<button id="btn-backgroud" class="btn-tool"><i class="fa fa-picture-o"></i></button>
+							<button id="btn-backgroud" class="btn-tool" style="color: inherit;"><i class="fa fa-picture-o"></i></button>
 							<input id="file-input" type="file" style="display:none;">
 						<span class="tooltiptext">Imagem</span>
 						</div>
@@ -87,7 +87,7 @@
 				<div id="box-jornada" class="frame"></div>
 			</div>
 			<div id="Cena" class="frame1 tabcontent">
-				<div style="height: 30px">
+				<div class="tool-bar">
 					<img src="./img/coracao.png" alt="coracao" width="25" align="center">
 					  <select id="sel_life">
 						  <option selected>0</option>
