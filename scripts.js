@@ -1,4 +1,8 @@
-var tool;
+var tool = "t1";
+
+function Tool(){
+    return tool;
+}
 
 function openTab(evt, tab) {
     // Declare all variables
@@ -131,8 +135,7 @@ function addCena(evt) {
     jorney.addScene(scene);
 
     $('#cenaSelector').append(element);
-    
-    console.log(journey);
+
 }
 
 function addDesafio(evt, selector) {
