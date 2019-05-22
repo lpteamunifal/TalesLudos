@@ -21,15 +21,28 @@ function openTab(evt, tab) {
 
 document.getElementById("defaultOpen").click();
 
+var y = document.getElementById("topnav");
+if ($(window).width() < 1000) {
+        if(y.className === "topnav"){
+	    y.className = "topnav hidden";
+	}
+}
+
 $('.frame').css('width','100%');
 $('.frame').height($('.frame').width() / 2.031);
 
 $(window).resize(function(){
     var x = document.getElementById("frame-div");
+    var y = document.getElementById("topnav");
     if ($(window).width() < 1000) {
         if(x.className === "col-8 frame-fixer") {
             x.className = "col-10 frame-fixer";
         }
+	if(y.className === "topnav"){
+	    y.className = "topnav hidden";
+	}
+	document.getElementById("frame-div").style.marginRight="auto";
+        document.getElementById("frame-div").style.marginLeft="auto";
     }
     else {
         if(x.className === "col-10 frame-fixer")
@@ -37,7 +50,30 @@ $(window).resize(function(){
     }
     $('.frame').css('width','100%');
     $('.frame').height($('.frame').width() / 2.031);
+    
+    var resizeWidth = document.getElementById('box-jornada').clientWidth;
+    var resizeHeight = document.getElementById('box-jornada').clientHeight;
+    
+    var scale = resizeWidth / journeyStage.width();
+    
+    journeyStage.width(resizeWidth);
+    journeyStage.height(resizeHeight);
+    //journeyStage.scale({x: scale, y: scale});
+    journeyStage.draw();
 });
+
+function openNav(){
+    var x = document.getElementById("topnav");
+    if ($(window).width() < 1000) {
+        if (x.className === "topnav hidden"){
+            x.className = "topnav responsive";
+            document.getElementById("btnnav1").style.display= "inline";
+        }else if (x.className === "topnav responsive"){
+            x.className = "topnav hidden";
+            document.getElementById("btnnav1").style.display= "none";
+        }
+    }    
+}
 
 function menu() {
     var x = document.getElementById("bar");
@@ -45,9 +81,11 @@ function menu() {
         x.className += " responsive";
         x.className.replace(" col", "");
         console.log('a');
+        document.getElementById("btnnav").style.display = "block";
     } else {
         x.className = "col bar";
         console.log('b');
+        document.getElementById("btnnav").style.display = "none";
     }
 }
 
@@ -180,17 +218,21 @@ function deleteDesafio(evt, desafio) {
     modal.parentNode.removeChild(modal);
 }
 
-$("#selecionar-imagem").change(function(){
+$("#file-input").change(function(){
 	var file = this.files[0];
     var reader = new FileReader();
     reader.onloadend = function () {
-       $('#Jornada').css('background-image', 'url("' + reader.result + '")');
-       $('#Jornada').css('background-size', 'cover');
+       $('#box-jornada').css('background-image', 'url("' + reader.result + '")');
+       $('#box-jornada').css('background-size', 'cover');
     }
     if (file) {
         reader.readAsDataURL(file);
     } else {
     }
+});
+
+$('#btn-backgroud').on('click', function() {
+    $('#file-input').trigger('click');
 });
 
 function closeModal(modalName){
@@ -201,4 +243,8 @@ function closeModal(modalName){
 function login_function(){
    document.getElementById("modal-login").style.display = "block";
 }
+
+function register_function(){
+	   document.getElementById("modal-register").style.display = "block";
+	}
 
