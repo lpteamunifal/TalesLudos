@@ -138,6 +138,7 @@ body {
 /*Top navigation bar*/
 .topnav {
 	overflow: hidden;
+	display: block;
 }
 
 .topnav a {
@@ -159,6 +160,27 @@ body {
 .topnav a.active {
 	background-color: #0099f6;
 	color: white;
+}
+
+@media screen and (max-width: 1000px) {
+	.topnav.hidden{
+		display: none;
+	}
+	
+	.topnav.responsive{
+	  position: absolute;	 	/* position se torna relative*/
+    display: inline-grid;
+		width: 100%;
+		height: 100%;
+		opacity: 1;			/* opacity não é mais necessário*/
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 3;
+		background-color: #e6f3ff;	/* background-color não é mais necessário*/
+	}
+
 }
 
 .login-button {
@@ -327,7 +349,7 @@ button.delete{
 
 .tabcontent {
 	background-color: white;
-	display: none;
+	display: inline-block;
 	overflow: hidden;
 }
 /*End*/
@@ -362,6 +384,7 @@ button.delete{
 	font-size: 15px;
 	background-color: #b9deff;
 	margin-right: 5px;
+	margin-bottom: 3px;
 	border-radius: 10px;
 	border: none;
 	outline: none;
@@ -383,7 +406,7 @@ button.delete{
 .modal {
 	display: none;
 	position: fixed;
-	z-index: 1;
+	z-index: 10;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -457,23 +480,42 @@ button.delete{
 	.bar a.icon {
 		float: left;
 		display: block;
+		position: absolute;
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	.bar.responsive {
-		position: relative;
+		position: absolute;	 	/* position se torna relative*/
+    		display: block;
+		width: 98%;
+		height: 100%;
+		opacity: 1;			/* opacity não é mais necessário*/
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		background-color: #e6f3ff;	/* background-color não é mais necessário*/
 	}
 	.bar.responsive a.icon {
 		position: absolute;
-		right: 0;
+		left: 0;
 		top: 0;
 	}
 	.bar.responsive div {
 		float: none;
 		display: block;
+		overflow: scroll;
 	}
 }
+
+.btnnav{
+        display: none;
+        
+}
+
+
 
 input[type = text], input[type = password] {
 	width: 100%;

@@ -23,15 +23,28 @@ function openTab(evt, tab) {
 
 document.getElementById("defaultOpen").click();
 
+var y = document.getElementById("topnav");
+if ($(window).width() < 1000) {
+        if(y.className === "topnav"){
+	    y.className = "topnav hidden";
+	}
+}
+
 $('.frame').css('width','100%');
 $('.frame').height($('.frame').width() / 2.031);
 
 $(window).resize(function(){
     var x = document.getElementById("frame-div");
+    var y = document.getElementById("topnav");
     if ($(window).width() < 1000) {
         if(x.className === "col-8 frame-fixer") {
             x.className = "col-10 frame-fixer";
         }
+	if(y.className === "topnav"){
+	    y.className = "topnav hidden";
+	}
+	document.getElementById("frame-div").style.marginRight="auto";
+        document.getElementById("frame-div").style.marginLeft="auto";
     }
     else {
         if(x.className === "col-10 frame-fixer")
@@ -40,6 +53,7 @@ $(window).resize(function(){
 
     $('.frame').css('width','100%');
     $('.frame').height($('.frame').width() / 2.031);
+
     console.log($('.frame').width());
     console.log($('.frame').height());
     
@@ -54,15 +68,30 @@ $(window).resize(function(){
     journeyStage.draw();
 });
 
+function openNav(){
+    var x = document.getElementById("topnav");
+    if ($(window).width() < 1000) {
+        if (x.className === "topnav hidden"){
+            x.className = "topnav responsive";
+            document.getElementById("btnnav1").style.display= "inline";
+        }else if (x.className === "topnav responsive"){
+            x.className = "topnav hidden";
+            document.getElementById("btnnav1").style.display= "none";
+        }
+    }    
+}
+
 function menu() {
     var x = document.getElementById("bar");
     if (x.className === "col bar") {
         x.className += " responsive";
         x.className.replace(" col", "");
         console.log('a');
+        document.getElementById("btnnav").style.display = "block";
     } else {
         x.className = "col bar";
         console.log('b');
+        document.getElementById("btnnav").style.display = "none";
     }
 }
 

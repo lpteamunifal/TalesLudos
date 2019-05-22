@@ -147,7 +147,7 @@ window.addSceneCircleInJourney = function (sceneNumber)
 	});
 	
 	return group;
-
+  
 	//AddLink(scenesLayer);
 }
 
