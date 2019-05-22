@@ -1,3 +1,5 @@
+var tool;
+
 function openTab(evt, tab) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -48,8 +50,12 @@ $(window).resize(function(){
         if(x.className === "col-10 frame-fixer")
             x.className = "col-8 frame-fixer";
     }
+
     $('.frame').css('width','100%');
     $('.frame').height($('.frame').width() / 2.031);
+
+    console.log($('.frame').width());
+    console.log($('.frame').height());
     
     var resizeWidth = document.getElementById('box-jornada').clientWidth;
     var resizeHeight = document.getElementById('box-jornada').clientHeight;
@@ -125,33 +131,37 @@ function openDesafio(evt) {
 var jorney = new Jorney('Test');
 
 function addCena(evt) {
-    jorney.sceneNumber++;
-    var sceneNumber = jorney.sceneNumber;
+    var sceneNumber = jorney.getNextSceneNumber();
 
     var element = document.createElement("div");
+    
+    var konvaObject = addSceneCircleInJourney(sceneNumber);
+    
+    var scene = new Scene(sceneNumber,'Cena ' + sceneNumber, konvaObject);
 
     var textBlock = '';
-    textBlock += '<div id="c' + sceneNumber + '">';
+    textBlock += '<div id="c' + scene.getId + '">';
     textBlock += '  <div class="accordion">';
-    textBlock += '      <button class=\"col-8\" onclick="openScene(event, \'c' + sceneNumber + '\')\">Cena ' + sceneNumber + '</button>\n';
-    textBlock += '      <button class="delete col-4" onclick="deleteWarning(event, \'c' + sceneNumber + '\')"><span>&times;</span></button>';
+    textBlock += '      <button class=\"col-8\" onclick="openScene(event, \'c' + scene.getId + '\')\">' + scene.getName + '</button>\n';
+    textBlock += '      <button class="delete col-4" onclick="deleteWarning(event, \'c' + scene.getId + '\')"><span>&times;</span></button>';
     textBlock += '  </div>';
     textBlock += '  <div class="panel">\n';
-    textBlock += '      <div id="ds' + sceneNumber + '\"></div>\n';
+    textBlock += '      <div id="ds' + scene.getId + '\"></div>\n';
     textBlock += '      <div class=\"subaccordion\">';
-    textBlock += '          <button onclick="addDesafio(event, \'ds' + sceneNumber + '\')">+ Adicionar Desafio</button>';
+    textBlock += '          <button onclick="addDesafio(event, \'ds' + scene.getId + '\')">+ Adicionar Desafio</button>';
     textBlock += '      </div>';
     textBlock += '  </div>';
     textBlock += '</div>';
 
     element.innerHTML = textBlock;
+    
+    scene.setElement = element;
 
-    var scene = new Scene('c' + sceneNumber, element);
-    jorney.scene.push(scene);
+    jorney.addScene(scene);
 
     $('#cenaSelector').append(element);
     
-    addSceneCircleInJourney(jorney.sceneNumber);
+    console.log(journey);
 }
 
 function addDesafio(evt, selector) {
@@ -245,6 +255,20 @@ function login_function(){
 }
 
 function register_function(){
-	   document.getElementById("modal-register").style.display = "block";
-	}
+   document.getElementById("modal-register").style.display = "block";
+}
 
+function selectedTool(evt) {
+    // Declare all variables
+    var i, links;
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    links = document.getElementsByClassName("tool-bar-item");
+    for (i = 0; i < links.length; i++) {
+        links[i].className = links[i].className.replace(" act", "");
+    }
+
+    tool = evt.currentTarget.parentNode.parentNode.getAttribute('id');
+
+    evt.currentTarget.parentNode.parentNode.className += " act";
+}

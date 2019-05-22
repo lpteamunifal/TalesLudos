@@ -168,8 +168,8 @@ body {
 	}
 	
 	.topnav.responsive{
-	        position: absolute;	 	/* position se torna relative*/
-    		display: inline-grid;
+	  position: absolute;	 	/* position se torna relative*/
+    display: inline-grid;
 		width: 100%;
 		height: 100%;
 		opacity: 1;			/* opacity não é mais necessário*/
@@ -536,8 +536,9 @@ input[type = text], input[type = password] {
 
 .tool-bar{
 	height: 30px;
-	background-color: #cccccc;
-	box-shadow: 0px 2px 3px #888888;
+	background-color: white;
+	border-bottom-style: solid;
+	border-width: 1px;
 	padding: 6px;
 	padding-top: 8px;
 	padding-bottom: 0px;
@@ -550,10 +551,7 @@ input[type = text], input[type = password] {
 	width: 20px;
 	margin: 0px 3px;
 	padding: 2px 0px 2px 0px;
-	border-style: solid;
-	border-width: thin;
-	border-color: #444444;
-	border-radius: 3px;
+	border: none;
 }
 
 .btn-tool{
@@ -565,10 +563,37 @@ input[type = text], input[type = password] {
 }
 
 .tool-bar-item:hover{
-	background-color: #dddddd;
+	color: #3473CD;
 }
 
-.tool-bar-item.active{
-	background-color: #aaaaaa;
-	color: black;
+.act{
+	color: #3473CD;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: min-content;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 3px 5px;
+    border-radius: 3px;
+ 	font-size: 12px;
+ 	right: -10px;	
+ 	margin: 8px 0px 0px 0px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
