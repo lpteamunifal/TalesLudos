@@ -1,4 +1,5 @@
 var tool;
+var journey = new Journey('Test');
 
 function openTab(evt, tab) {
     // Declare all variables
@@ -19,6 +20,27 @@ function openTab(evt, tab) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tab).style.display = "block";
     evt.currentTarget.className += " active";
+}
+
+function openTabScene() {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById("Cena").style.display = "block";
+    document.getElementById("CenaTab").className += " active";
 }
 
 document.getElementById("defaultOpen").click();
@@ -95,6 +117,20 @@ function menu() {
     }
 }
 
+var sel = 'c1';
+
+function saveText() {
+    var s = journey.getSceneByName(sel);
+    var text = document.getElementsByClassName("ql-editor")[0].innerHTML;
+    s.setContainer(text);
+}
+
+function loadText(scene) {
+    var s = journey.getSceneByName(scene);
+    var editor = document.getElementsByClassName("ql-editor")[0];
+    editor.innerHTML = s.getContainer();
+}
+
 function openScene(evt, scene) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -108,6 +144,9 @@ function openScene(evt, scene) {
     // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("accordion");
     for (i = 0; i < tablinks.length; i++) {
+        if(tablinks[i].className.includes("active")) {
+            saveText(tablinks[i].id);
+        }
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
@@ -115,6 +154,10 @@ function openScene(evt, scene) {
     var element = document.getElementById(scene).getElementsByClassName('panel');
     element[0].style.display = "block";
     evt.currentTarget.parentNode.className += " active";
+
+    sel = scene;
+    openTabScene();
+    loadText(scene);
 }
 
 function openDesafio(evt) {
@@ -128,21 +171,19 @@ function openDesafio(evt) {
     evt.currentTarget.parentNode.className += " active";
 }
 
-var jorney = new Jorney('Test');
-
 function addCena(evt) {
-    var sceneNumber = jorney.getNextSceneNumber();
+    var sceneNumber = journey.getNextSceneNumber();
 
     var element = document.createElement("div");
     
     var konvaObject = addSceneCircleInJourney(sceneNumber);
     
-    var scene = new Scene(sceneNumber,'Cena ' + sceneNumber, konvaObject);
+    var scene = new Scene(sceneNumber,'c' + sceneNumber, konvaObject);
 
     var textBlock = '';
     textBlock += '<div id="c' + scene.getId + '">';
     textBlock += '  <div class="accordion">';
-    textBlock += '      <button class=\"col-8\" onclick="openScene(event, \'c' + scene.getId + '\')\">' + scene.getName + '</button>\n';
+    textBlock += '      <button class=\"col-8\" onclick="openScene(event, \'c' + scene.getId + '\')\">Cena ' + scene.getId + '</button>\n';
     textBlock += '      <button class="delete col-4" onclick="deleteWarning(event, \'c' + scene.getId + '\')"><span>&times;</span></button>';
     textBlock += '  </div>';
     textBlock += '  <div class="panel">\n';
@@ -157,7 +198,7 @@ function addCena(evt) {
     
     scene.setElement = element;
 
-    jorney.addScene(scene);
+    journey.addScene(scene);
 
     $('#cenaSelector').append(element);
     
@@ -165,7 +206,7 @@ function addCena(evt) {
 }
 
 function addDesafio(evt, selector) {
-    var scene = jorney.getSceneByName('c' + selector.substring(2));
+    var scene = journey.getSceneByName('c' + selector.substring(2));
 
     console.log('c' + selector.substring(2));
 
@@ -209,7 +250,7 @@ function deleteCena(evt, cena) {
 
     var sceneNumber = cena.substring(1);
 
-    jorney.deleteSceneByName('c' + sceneNumber);
+    journey.deleteSceneByName('c' + sceneNumber);
 
     console.log(sceneNumber);
 
@@ -221,7 +262,7 @@ function deleteCena(evt, cena) {
 
 function deleteDesafio(evt, desafio) {
     var element = document.getElementById(desafio);
-    var scene = jorney.getSceneByName(desafio.split('d'));
+    var scene = journey.getSceneByName(desafio.split('d'));
     element.parentNode.removeChild(element);
 
     var modal = document.getElementById('modal-delete-confirmation');

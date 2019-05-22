@@ -1,4 +1,4 @@
-class Jorney {
+class Journey {
 
     constructor(name){
         this.name = name;

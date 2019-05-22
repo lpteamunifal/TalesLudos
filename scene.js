@@ -37,11 +37,11 @@ class Scene {
         this.element = element;
     }
     
-    get getContainer(){
+    getContainer(){
     	return this.container;
     }
     
-    set setContainer(container){
+    setContainer(container){
     	this.container = container;
     }
     
@@ -72,9 +72,5 @@ class Scene {
     get getNextChallengeNumber(){
         this.challengeNumber++;
         return this.challengeNumber;
-    }
-
-    getChallengeByID(id){
-        return this.challenge[id];
     }
 }
