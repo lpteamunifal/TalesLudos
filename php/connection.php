@@ -13,5 +13,4 @@
         echo "Erro ao conectar-se ao banco de dados!";
     }
 
-
 ?>
