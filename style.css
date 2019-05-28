@@ -512,7 +512,6 @@ button.delete{
 
 .btnnav{
         display: none;
-        
 }
 
 
@@ -596,4 +595,26 @@ input[type = text], input[type = password] {
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
     visibility: visible;
+}
+
+.btn-plugin {
+	width: 108%;
+	font-size: 15px;
+	background-color: #b9deff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 10px 25px;
+	transition: 0.5s;
+}
+
+.btn-plugin:hover:not(.active) {
+	background-color: #85d1ff;
+	color: black;
+	transition: 0.5s;
+}
+
+.btn-plugin.active {
+	background-color: #0099f6;
+	color: white;
 }
