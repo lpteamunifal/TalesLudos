@@ -314,4 +314,27 @@ function selectedTool(evt) {
     evt.currentTarget.parentNode.parentNode.className += " act";
 }
 
+function selectPlugin(evt, p){
+    var i, plugins;
+    // Get all elements with class="tablinks" and remove the class "active"
+    plugins = document.getElementsByClassName("btn-plugin");
+    for (i = 0; i < plugins.length; i++) {
+        plugins[i].className = plugins[i].className.replace(" active", "");
+    }
+
+   //tool = evt.currentTarget.getAttribute('id');
+    evt.currentTarget.className += " active";
+
+
+    box = document.getElementById(p);
+
+    var frames = document.getElementsByClassName("plugin-frame");
+    for (i = 0; i < frames.length; i++) {
+        frames[i].style.display = "none";
+    }
+
+    box.style.display = "block";
+    console.log(box);
+}
+
 $("#p1").load("plugin-fechado.html");

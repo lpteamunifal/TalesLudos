@@ -131,14 +131,15 @@
 			<div id="Desafio" class="frame1 tabcontent">
 				<div class="frame">
 					<div class="row" style="height: inherit;">
-						<div class="col-2" style="background-color: #b9deff; height: 100%">
-							<button class="btn-plugin active">Plugin 1</button>
-							<button class="btn-plugin">Plugin 2</button>
-							<button class="btn-plugin">Plugin 3</button>
+						<div id="select_plugins" class="col-2" style="background-color: #b9deff; height: 100%">
+							<button class="btn-plugin active" onclick="selectPlugin(event, 'p1')">Plugin 1</button>
+							<button class="btn-plugin"  onclick="selectPlugin(event, 'p2')">Plugin 2</button>
+							<button class="btn-plugin"  onclick="selectPlugin(event, 'p3')">Plugin 3</button>
 							<button class="btn-plugin">+ Adiciona Plugin</button>
 						</div>
-						<div id="p1" class="col" style="overflow-y: scroll"></div>
-						<div id="p2" class="col" style="overflow-y: scroll; display: none"></div>
+						<div id="p1" class="col plugin-frame" style="overflow-y: scroll">Plugin1</div>
+						<div id="p2" class="col plugin-frame" style="overflow-y: scroll; display: none">Plugin2</div>
+						<div id="p3" class="col plugin-frame" style="overflow-y: scroll; display: none">Plugin3</div>
 					</div>
 				</div>
 			</div>
