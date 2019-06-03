@@ -314,4 +314,4 @@ function selectedTool(evt) {
     evt.currentTarget.parentNode.parentNode.className += " act";
 }
 
-$("#p1").load("plugin-fechado.html");
+$("#p1").load("./plugin-fechado.html");
