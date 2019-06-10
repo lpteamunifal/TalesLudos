@@ -6,8 +6,8 @@ function addOption() {
     var input = document.getElementById("addInput");
     var text = "<div>";
     text += "<input type=\"checkbox\" name=\"alternativa\" value=\"op1\">";
-    text += "<label>" + input.value + " </label>";
-    text += "<button onclick=\"deleteOption(event)\">X</button>";
+    text += "<label style=\"margin-left: 10px\">" + input.value + " </label>";
+    text += "<button onclick=\"deleteOption(event)\" style=\"margin-left: 10px\">X</button>";
     text += "<br>";
     text += "</div>";
 

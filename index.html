@@ -5,17 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="plugin-fechado.html	" rel="import" />
+	<link href="pluginFechado.html	" rel="import" />
 
 	<link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
-	<link rel="import" href="plugin-fechado.html">
 </head>
 <body class="container-fluid">
 	<div id="topnav" class="topnav">
-	        <div id="btnnav1" class="btnnav right">
+        <div id="btnnav1" class="btnnav right">
 				<button class="btn right" onclick="openNav()">Voltar</button>
 		</div>
 		
@@ -140,7 +138,33 @@
 							<button class="btn-plugin"  onclick="selectPlugin(event, 'p3')">Plugin 3</button>
 							<button class="btn-plugin">+ Adiciona Plugin</button>
 						</div>
-						<div id="p1" class="col plugin-frame" style="overflow-y: scroll">Plugin1</div>
+						<div id="p1" class="col plugin-frame" style="overflow-y: scroll">
+							<link rel="stylesheet" href="./pluginStyle.css">
+
+							<h1>Pergunta fechada</h1>
+							<br>
+							<label>Pergunta:</label><br>
+							<textarea type="text" rows="4" style="width: 100%"></textarea><br>
+
+							<br>
+
+							<label>Respostas:</label><br>
+							<div id="options">
+								<div style="width: inherit">
+									<input type="checkbox" name="alternativa" value="op1">
+									<label>Teste</label>
+									<button onclick="deleteOption(event)">X</button>
+									<br>
+								</div>
+							</div>
+							<br>
+
+							<input id="addInput" type="text" style="width: 95%">
+							<button id="btnAddInput" onclick="addOption()">+</button><br>
+
+							<script src="pluginScript.js"></script>
+							<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+						</div>
 						<div id="p2" class="col plugin-frame" style="overflow-y: scroll; display: none">Plugin2</div>
 						<div id="p3" class="col plugin-frame" style="overflow-y: scroll; display: none">Plugin3</div>
 					</div>

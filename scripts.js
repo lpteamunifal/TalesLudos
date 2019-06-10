@@ -337,4 +337,4 @@ function selectPlugin(evt, p){
     console.log(box);
 }
 
-$("#p1").load("./plugin-fechado.html");
+//$("#p1").load("./pluginFechado.html");
