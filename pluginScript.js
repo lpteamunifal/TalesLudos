@@ -4,17 +4,20 @@ function getPoints() {
 
 function addOption() {
     var input = document.getElementById("addInput");
-    var text = "<div>";
-    text += "<input type=\"checkbox\" name=\"alternativa\" value=\"op1\">";
-    text += "<label>" + input.value + " </label>";
-    text += "<button onclick=\"deleteOption(event)\">X</button>";
-    text += "<br>";
-    text += "</div>";
 
-    console.log(text);
+    if(input.value != ""){
+        var text = "<div>";
+        text += "<input type=\"checkbox\" name=\"alternativa\" value=\"op1\">";
+        text += "<label>" + input.value + " </label>";
+        text += "<button class=\"btn\" onclick=\"deleteOption(event)\">X</button>";
+        text += "<br>";
+        text += "</div>";
 
-    input.value = "";
-    $('#options').append(text);
+        console.log(text);
+
+        input.value = "";
+        $('#options').append(text);
+    }
 }
 
 window.onload = function() {
