@@ -43,6 +43,27 @@ function openTabScene() {
     document.getElementById("CenaTab").className += " active";
 }
 
+function openTabChallenge() {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById("Desafio").style.display = "block";
+    document.getElementById("DesafioTab").className += " active";
+}
+
 document.getElementById("defaultOpen").click();
 
 var y = document.getElementById("topnav");
@@ -160,13 +181,50 @@ function openScene(evt, scene) {
     loadText(scene);
 }
 
-function openDesafio(evt) {
+function loadChallenge(challenge){
+
+    var s = journey.getSceneByName(challenge.substring(0,2));
+    var c = s.getChallengeByName(challenge);
+    var frame = document.getElementsByClassName("frameDesafio")[0];
+
+
+    var textBlock = '';
+    textBlock += '<div id="challengeOptions" class="challengeOptions">';
+    textBlock +=    '<p>Desafios Predefinidos</p>';
+    textBlock +=        '<ul style="list-style-type:none;">';
+
+    // Lógica de busca dos plugins feitos pelos desenvolvedores do Tales Ludos
+    // Terá nas opçoes a chamada de função onde ira preencher o campo pluginDescription com o plugin
+
+    textBlock +=        '</ul>';
+    textBlock +=    '<p>Desafios da Comunidade</p>';
+    textBlock +=        '<ul style="list-style-type:none;">';
+
+    // Lógica de busca dos plugins feitos pela comunidade
+    // Terá nas opçoes a chamada de função onde ira preencher o campo pluginDescription com o plugin
+
+    textBlock +=        '</ul>';
+    textBlock += '</div>';
+    textBlock += '<div id="pluginDescription" class="pluginDescription">';
+    textBlock += '</div>';
+
+    
+
+
+    frame.innerHTML = textBlock;
+
+}
+
+function openDesafio(evt, challenge) {
     var i, desafios;
 
     desafios = document.getElementsByClassName("desafio");
     for (i = 0; i < desafios.length; i++) {
         desafios[i].className = desafios[i].className.replace(" active", "");
     }
+
+    openTabChallenge();
+    loadChallenge(challenge);
 
     evt.currentTarget.parentNode.className += " active";
 }
@@ -206,18 +264,30 @@ function addCena(evt) {
 }
 
 function addDesafio(evt, selector) {
-    var scene = journey.getSceneByName('c' + selector.substring(2));
+    var scene = journey.getSceneByName('c' + selector.substring(2));  
 
-    console.log('c' + selector.substring(2));
+    var element = document.createElement("div");
 
-    var numeroDesafio = scene.getNextChallengeNumber;
+    var challengeNumber = scene.getNextChallengeNumber;
+
+    var challenge = new Challenge(challengeNumber,'c' + selector.substring(2) + 'd' + challengeNumber);
+
     var textBlock = '';
-    textBlock += '<div id="c' + selector.substring(2) + 'd' + numeroDesafio + '" class="subaccordion desafio">';
-    textBlock += '  <button class=\"col-8\" onclick=\"openDesafio(event)\">Desafio ' + numeroDesafio + '</button>';
-    textBlock += '  <button class="delete col-4" onclick="deleteWarning(event, \'c' + selector.substring(2) + 'd' + numeroDesafio + '\')"><span>&times;</span></button>';
+    textBlock += '<div id="c' + selector.substring(2) + 'd' + challengeNumber + '" class="subaccordion desafio">';
+    textBlock += '  <button class=\"col-8\" onclick=\"openDesafio(event, \'c' + selector.substring(2) + 'd' + challengeNumber + '\')\">Desafio ' + challengeNumber + '</button>';
+    textBlock += '  <button class="delete col-4" onclick="deleteWarning(event, \'c' + selector.substring(2) + 'd' + challengeNumber + '\')"><span>&times;</span></button>';
     textBlock += '</div>';
 
-    $('#' + selector).append(textBlock);
+    element.innerHTML = textBlock;
+    
+    challenge.setElement = element;
+
+    scene.addChallenge(challenge);
+
+    $('#' + selector).append(element);
+
+    console.log(scene);
+
 }
 
 function deleteWarning(evt, cena) {

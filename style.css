@@ -597,3 +597,31 @@ input[type = text], input[type = password] {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
+.frameDesafio{
+	display: inline-flex;
+    position: relative;
+}
+
+.challengeOptions{
+    margin: 5px;
+    border: black;
+    border-style: solid;
+    border-width: 0px 2px 0px 0px;
+    width: 30%;
+    height: 100%;
+    position: relative;
+    overflow: scroll;
+    padding-top: 45%;
+    padding-bottom: 45%;
+    padding-right: 28%;
+}
+
+.pluginDescription{
+	margin: auto;
+    width: 60%;
+    height: 100%;
+    position: relative;
+    overflow: scroll;
+
+}

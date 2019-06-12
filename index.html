@@ -67,7 +67,7 @@
 			<div class="tab">
 				<button class="tablinks" onclick="openTab(event, 'Jornada')" id="defaultOpen">Jornada</button>
 				<button id="CenaTab" class="tablinks" onclick="openTab(event, 'Cena')">Cena</button>
-				<button class="tablinks" onclick="openTab(event, 'Desafio')">Desafio</button>
+				<button id="DesafioTab" class="tablinks" onclick="openTab(event, 'Desafio')">Desafio</button>
 			</div>
 
 			<button class="btn right"><i class="fa fa-play"></i> Visualizar</button>
@@ -127,7 +127,7 @@
 
 			</div>
 			<div id="Desafio" class="frame1 tabcontent">
-				<div class="frame"></div>
+				<div class="frameDesafio"></div>
 			</div>
 		</div>
 	</div>
@@ -233,6 +233,7 @@
 
 	<script src="journey.js"></script>
 	<script src="scene.js"></script>
+	<script src="challenge.js"></script>
 	<script src="./scripts.js"></script>
 	<script src='./konvaScripts.js'></script>
 

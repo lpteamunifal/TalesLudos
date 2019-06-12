@@ -73,4 +73,18 @@ class Scene {
         this.challengeNumber++;
         return this.challengeNumber;
     }
+
+    addChallenge(challenge){
+    	this.challenge.push(challenge);
+    }
+
+    getChallengeByName(name){
+        for(var i = 0; i < this.challenge.length; i++){
+            if(this.challenge[i].getName == name){
+                return this.challenge[i];
+            }
+        }
+        return null;
+    }
+
 }
