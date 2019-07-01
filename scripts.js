@@ -334,7 +334,6 @@ function selectPlugin(evt, p){
     }
 
     box.style.display = "block";
-    console.log(box);
 }
 
 $("#p1").load("./plugin-fechado.html");
