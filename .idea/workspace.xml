@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4e2ba662-3fd4-4f48-b540-f299eb7eabe7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/pluginStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pluginFechado.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bin/phpunit" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bin/phpunit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bin/var-dump-server" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bin/var-dump-server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/EmailLexer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/EmailLexer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/EmailParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/EmailParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/EmailValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/EmailValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/AtextAfterCFWS.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/AtextAfterCFWS.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CRLFAtTheEnd.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CRLFAtTheEnd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CRLFX2.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CRLFX2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CRNoLF.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CRNoLF.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CharNotAllowed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CharNotAllowed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CommaInDomain.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/CommaInDomain.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ConsecutiveAt.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ConsecutiveAt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ConsecutiveDot.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ConsecutiveDot.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/DomainHyphened.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/DomainHyphened.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/DotAtEnd.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/DotAtEnd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/DotAtStart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/DotAtStart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingAT.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingAT.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingATEXT.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingATEXT.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingCTEXT.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingCTEXT.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingDTEXT.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingDTEXT.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingDomainLiteralClose.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingDomainLiteralClose.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingQPair.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingQPair.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/InvalidEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/InvalidEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/NoDNSRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/NoDNSRecord.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/NoDomainPart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/NoDomainPart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/NoLocalPart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/NoLocalPart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/UnclosedComment.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/UnclosedComment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/UnclosedQuotedString.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/UnclosedQuotedString.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/UnopenedComment.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Exception/UnopenedComment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Parser/DomainPart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Parser/DomainPart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Parser/LocalPart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Parser/LocalPart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Parser/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Parser/Parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/DNSCheckValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/DNSCheckValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/EmailValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/EmailValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/Error/RFCWarnings.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/Error/RFCWarnings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/Error/SpoofEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/Error/SpoofEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/Exception/EmptyValidationList.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/Exception/EmptyValidationList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/MultipleErrors.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/MultipleErrors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/MultipleValidationWithAnd.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/MultipleValidationWithAnd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/NoRFCWarningsValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/NoRFCWarningsValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/RFCValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/RFCValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/SpoofCheckValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/SpoofCheckValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/AddressLiteral.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/AddressLiteral.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/CFWSNearAt.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/CFWSNearAt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/CFWSWithFWS.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/CFWSWithFWS.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/DeprecatedComment.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/DeprecatedComment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/DomainLiteral.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/DomainLiteral.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/DomainTooLong.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/DomainTooLong.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/EmailTooLong.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/EmailTooLong.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6BadChar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6BadChar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6ColonEnd.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6ColonEnd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6ColonStart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6ColonStart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6Deprecated.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6Deprecated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6DoubleColon.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6DoubleColon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6GroupCount.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6GroupCount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6MaxGroups.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/IPV6MaxGroups.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/LabelTooLong.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/LabelTooLong.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/LocalTooLong.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/LocalTooLong.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/NoDNSMXRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/NoDNSMXRecord.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/ObsoleteDTEXT.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/ObsoleteDTEXT.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/QuotedPart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/QuotedPart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/QuotedString.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/QuotedString.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/TLD.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/TLD.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/Warning.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Warning/Warning.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/phpunit.xml.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/ErrorException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/ErrorException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Formatter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Formatter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Frame.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Frame.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/FrameCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/FrameCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Inspector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Inspector.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/CallbackHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/CallbackHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/HandlerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/HandlerInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/JsonResponseHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/JsonResponseHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PlainTextHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PlainTextHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/XmlResponseHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/XmlResponseHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/css/whoops.base.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/css/whoops.base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/clipboard.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/clipboard.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/prettify.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/prettify.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/whoops.base.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/whoops.base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/zepto.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/zepto.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/env_details.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/env_details.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frame_code.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frame_code.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frame_list.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frame_list.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frames_container.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frames_container.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frames_description.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frames_description.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/header.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/header.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/header_outer.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/header_outer.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/layout.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/layout.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_details.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_details.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_details_outer.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_details_outer.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_left.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_left.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_left_outer.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_left_outer.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Run.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Run.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/RunInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/RunInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/HtmlDumperOutput.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/HtmlDumperOutput.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/Misc.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/Misc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/SystemFacade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/SystemFacade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/TemplateHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/TemplateHelper.php" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="pluginStyle.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/plugins/pluginfechado/pluginStyle.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="710" />
+    <option name="y" value="-25" />
+    <option name="width" value="990" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e2ba662-3fd4-4f48-b540-f299eb7eabe7" name="Default" comment="" />
+      <created>1562158125930</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562158125930</updated>
+      <workItem from="1562158135684" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="23000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="npm" side_tool="true" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/resources/plugins/pluginfechado/pluginStyle.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
