@@ -2,18 +2,29 @@ function getPoints() {
     return 10;
 }
 
-function addOption() {
-    var input = document.getElementById("addInput");
-    var text = "<div>";
-    text += "<label><input type=\"checkbox\" name=\"alternativa\" value=\"op1\">" + input.value + "</label>";
-    text += "<button onclick=\"deleteOption(event)\" style=\"margin-left: 10px\">X</button>";
-    text += "<br>";
+function connectionAddOption() {
+    var input1 = document.getElementById("addInput1");
+	var input2 = document.getElementById("addInput2");
+    var text = "";
+	text += "<div class=\"row\" style=\"width: inherit\">";
+	text += 	"<div class=\"col-2\"></div>";
+	text += 	"<div class=\"col-2\">";
+	text += 		"<p>" + input1.value + "</p>";
+	text += 	"</div>";
+	text += 	"<div class=\"col-2\">";
+	text += 		"<p>------------------------</p>";
+	text += 	"</div>";
+	text += 	"<div class=\"col-2\">";
+	text += 		"<p>" + input2.value + "</p>";
+	text += 	"</div>";
+	text += 	"<button onclick=\"deleteOption(event)\">X</button>";
     text += "</div>";
 
     console.log(text);
 
-    input.value = "";
-    $('#options').append(text);
+    input1.value = "";
+	input2.value = "";
+    $('#connections').append(text);
 }
 
 window.onload = function() {

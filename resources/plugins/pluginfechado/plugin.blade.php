@@ -11,8 +11,7 @@
     <label>Respostas:</label><br>
     <div id="options">
         <div style="width: inherit">
-            <input type="checkbox" name="alternativa" value="op1">
-            <label>Teste</label>
+            <label><input type="checkbox" name="alternativa" value="op1">Teste</label>
             <button onclick="deleteOption(event)">X</button>
             <br>
         </div>

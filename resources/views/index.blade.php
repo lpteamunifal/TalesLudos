@@ -167,7 +167,15 @@
 							<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 							-->
 						</div>
-						<div id="p2" class="col plugin-frame" style="overflow-y: scroll; display: none">Plugin2</div>
+						<div id="p2" class="col plugin-frame" style="overflow-y: scroll; display: none">
+							@component('connection.plugin')
+								
+								@slot('path')
+									./../resources/plugins/connection/
+								@endslot
+							
+							@endcomponent
+						</div>
 						<div id="p3" class="col plugin-frame" style="overflow-y: scroll; display: none">Plugin3</div>
 					</div>
 				</div>
