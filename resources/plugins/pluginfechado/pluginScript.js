@@ -4,16 +4,18 @@ function getPoints() {
 
 function addOption() {
     var input = document.getElementById("addInput");
-    var text = "<div>";
-    text += "<label><input type=\"checkbox\" name=\"alternativa\" value=\"op1\">" + input.value + "</label>";
-    text += "<button onclick=\"deleteOption(event)\" style=\"margin-left: 10px\">X</button>";
-    text += "<br>";
-    text += "</div>";
+	if(input.value != ""){
+		var text = "<div style=\"width: inherit\">";
+		text += "<button class=\"pf-delete-btn\" onclick=\"deleteOption(event)\">X</button>";
+		text += "<label><input class=\"pf-checkbox-size\" type=\"checkbox\" name=\"alternativa\" value=\"op1\"> " + input.value + "</label>";
+		text += "<br>";
+		text += "</div>";
 
-    console.log(text);
+		console.log(text);
 
-    input.value = "";
-    $('#options').append(text);
+		input.value = "";
+		$('#options').append(text);
+	}
 }
 
 window.onload = function() {
