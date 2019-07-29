@@ -176,7 +176,17 @@
 							
 							@endcomponent
 						</div>
-						<div id="p3" class="col plugin-frame" style="overflow-y: scroll; display: none">Plugin3</div>
+						<div id="p3" class="col plugin-frame" style="overflow-y: scroll; display: none">
+							@component('hangman.plugin')
+								
+								@slot('path')
+									./../resources/plugins/hangman/
+								@endslot
+							
+							@endcomponent
+						
+						</div>
+						
 					</div>
 				</div>
 			</div>
