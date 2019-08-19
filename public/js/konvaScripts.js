@@ -89,7 +89,7 @@ window.addSceneCircleInJourney = function (sceneNumber)
 		if(window.connectionMode == true)
 		{
 
-			if(oldGroupClicked == null)
+			if(oldGroupClicked == null || oldGroupClicked == group)
 			{
 				oldGroupClicked = group;
 				newGroupClicked = null;
@@ -108,6 +108,8 @@ window.addSceneCircleInJourney = function (sceneNumber)
 
 				var connection = new SceneConnection(oldGroupClicked, newGroupClicked, 0, 0, arrow);
 
+				connection.openEditableModal();
+
 				var sceneFromId = oldGroupClicked.name();
 				var sceneToId = newGroupClicked.name();
 
@@ -116,6 +118,23 @@ window.addSceneCircleInJourney = function (sceneNumber)
 
 				sceneFrom.addNextScene(connection);
 				sceneTo.addPreviousScene(connection);
+
+				arrow.on('dblclick', function(){
+					if(window.connectionMode == true)
+					{
+						sceneTo.removePreviousSceneConnection(connection);
+						sceneFrom.removeNextSceneConnection(connection);
+						arrow.destroy();
+						connection = null;
+						scenesLayer.draw();
+					}
+					
+				});
+
+				arrow.on('click', function(){
+					if(window.connectionMode == false)
+						connection.openEditableModal();
+				});
 
 				scenesLayer.add(arrow);
 				scenesLayer.draw();
