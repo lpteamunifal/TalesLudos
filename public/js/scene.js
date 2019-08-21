@@ -126,7 +126,21 @@ class Scene {
         var body = document.body;
         var children = document.createElement('div');
 
-        children.innerHTML = this.modal
+        children.innerHTML = this.modal;
         body.appendChild(children);
+    }
+
+    removePreviousSceneConnection(conn){
+        for(var i = 0; i < this.previousScenes.length; i++){
+            if(this.previousScenes[i] == conn)
+                this.previousScenes.splice(i);
+        }
+    }
+
+    removeNextSceneConnection(conn){
+        for(var i = 0; i < this.nextScenes.length; i++){
+            if(this.nextScenes[i] == conn)
+                this.nextScenes.splice(i);
+        }
     }
 }

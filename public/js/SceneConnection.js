@@ -5,6 +5,7 @@ class SceneConnection{
 		this.gradeMin = gradeMin;
 		this.gradeMax = gradeMax;
 		this.konvaArrow = konvaArrow;
+		this.modal = null;
 	}
 
 	get getFrom(){
@@ -45,5 +46,30 @@ class SceneConnection{
 
 	set setKonvaArrow(konvaArrow){
 		this.konvaArrow = konvaArrow;
+	}
+
+
+	openEditableModal(){
+		this.modal = "";
+
+		this.modal = "";
+        
+        this.modal +=  "<div id='arrow_modal' class='modal' style='display:block;'>";
+        this.modal +=  "    <div class='modal-content'>";
+        this.modal +=  "        <div class= 'modal-header'>";
+        this.modal +=  "            <button class='delete' onclick=document.getElementById('arrow_modal').remove();><span>&times;</span></button>";
+        this.modal +=  "        </div>";
+        this.modal +=  "        <div class='modal-body'>";
+        this.modal +=  "             Acertos mínimos: <input type='text'>";
+        this.modal +=  "             Acertos máximos: <input type='text'>";
+        this.modal +=  "        </div>";
+        this.modal +=  "    </div>";
+        this.modal +=  "</div>";
+
+        var body = document.body;
+        var children = document.createElement('div');
+
+        children.innerHTML = this.modal;
+        body.appendChild(children);
 	}
 }
