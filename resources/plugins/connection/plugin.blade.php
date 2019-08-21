@@ -8,7 +8,7 @@
 
     <br>
 
-    <label>Conecções:</label><br>
+    <label>Conexões:</label><br>
     <div id="connections" style="text-align: center">
         <div class="row" style="width: inherit">
 			<div class="col-2"></div>
