@@ -350,4 +350,28 @@ function selectPlugin(evt, p){
     console.log(box);
 }
 
-//$("#p1").load("./pluginFechado.html");
+function saveData(){
+	var scenes = journey.scenes;
+	var data = [];
+	
+	for(var i = 0; i < scenes.length; i++) {
+		var scene = {};
+		scene["sceneId"] = scenes[i].id;
+		scene["sceneName"] = scenes[i].name;
+		scene["sceneContent"] = scenes[i].content;
+		data[i] = scene;
+	}
+	
+	console.log(data);
+	$.ajax({
+		url:'./save',
+		type: 'POST',
+		dataType:'json',
+		contentType: 'json',
+		data: JSON.stringify(data),
+		contentType: 'application/json; charset=utf-8',
+	});
+	setTimeout(function () {
+        window.open('view', '_blank');
+    }, 200);
+}

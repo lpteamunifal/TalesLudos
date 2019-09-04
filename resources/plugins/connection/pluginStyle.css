@@ -1,0 +1,20 @@
+.con-add-btn {
+	font-size: 20px;
+	background-color: #b9deff;
+	border-radius: 0px;
+	padding: 9px 14px;
+	vertical-align: middle;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.con-delete-btn{
+	background-color: inherit;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: 0.5s;
+	color: red;
+}
