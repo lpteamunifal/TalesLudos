@@ -207,9 +207,7 @@ function addCena(evt) {
 
 function addDesafio(evt, selector) {
     var scene = journey.getSceneByName('c' + selector.substring(2));
-
-    console.log('c' + selector.substring(2));
-
+	
     var numeroDesafio = scene.getNextChallengeNumber;
     var textBlock = '';
     textBlock += '<div id="c' + selector.substring(2) + 'd' + numeroDesafio + '" class="subaccordion desafio">';
@@ -218,6 +216,10 @@ function addDesafio(evt, selector) {
     textBlock += '</div>';
 
     $('#' + selector).append(textBlock);
+	
+	var desafio = new Challenge(numeroDesafio, 'd' + numeroDesafio);
+	desafio.data = getSelectedPluginData();
+	scene.addChallenge(desafio);
 }
 
 function deleteWarning(evt, cena) {
@@ -327,6 +329,15 @@ function selectedTool(evt) {
     
     evt.currentTarget.parentNode.parentNode.className += " act";
 }
+
+function getSelectedPluginData(){
+	if (desafio == "closedquestion"){
+		return new DataClosed();
+	} else if (desafio == "connection"){
+		return new DataConnection();
+	}
+}
+
 function selectPlugin(evt, p){
     var i, plugins;
     // Get all elements with class="tablinks" and remove the class "active"
@@ -350,4 +361,17 @@ function selectPlugin(evt, p){
     console.log(box);
 }
 
-//$("#p1").load("./pluginFechado.html");
+function saveData(){
+	
+	$.ajax({
+		url:'./save',
+		type: 'POST',
+		dataType:'json',
+		contentType: 'json',
+		data: JSON.stringify(journey),
+		contentType: 'application/json; charset=utf-8',
+	});
+	setTimeout(function () {
+        window.open('view', '_blank');
+    }, 200);
+}

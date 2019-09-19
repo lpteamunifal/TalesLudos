@@ -67,7 +67,7 @@
 			@if(Auth::check())
 				<button class="btn right"><i class="fa fa-save"></i> Salvar Projeto</button>
 			@endif
-			<button class="btn right"><i class="fa fa-play"></i> Visualizar</button>
+			<button class="btn right" onclick="saveData()"><i class="fa fa-play"></i> Visualizar</button>
 			<button class="btn right"><i class="fa fa-download"></i> Exportar</button>
 			<div id="Jornada" class="frame1 tabcontent">
 				<div class="tool-bar">
@@ -125,41 +125,28 @@
 			<div id="Desafio" class="frame1 tabcontent">
 				<div class="frame">
 					<div class="row" style="height: inherit;">
+						<?php
+							$dirs = scandir('./../resources/plugins/');
+							$dir = array_shift($dirs);
+							$dir = array_shift($dirs);
+						?>
 						<div id="select_plugins" class="col-2" style="background-color: #b9deff; height: 100%">
-							<button class="btn-plugin active" onclick="selectPlugin(event, 'p1')">Plugin 1</button>
-							<button class="btn-plugin"  onclick="selectPlugin(event, 'p2')">Plugin 2</button>
-							<button class="btn-plugin"  onclick="selectPlugin(event, 'p3')">Plugin 3</button>
+							@for ($i = 0; $i < count($dirs); $i++)
+								<button id="btn-p{{ $i }}" class="btn-plugin" onclick="selectPlugin(event, 'p{{ $i }}')">{{ $dirs[$i] }}</button>
+							@endfor
 							<button class="btn-plugin">+ Adiciona Plugin</button>
 						</div>
-						<div id="p1" class="col plugin-frame" style="overflow-y: scroll">
-							<link rel="stylesheet" href="./css/pluginStyle.css">
-
-							<h1>Pergunta fechada</h1>
-							<br>
-							<label>Pergunta:</label><br>
-							<textarea type="text" rows="4" style="width: 100%"></textarea><br>
-
-							<br>
-
-							<label>Respostas:</label><br>
-							<div id="options">
-								<div style="width: inherit">
-									<input type="checkbox" name="alternativa" value="op1">
-									<label>Teste</label>
-									<button onclick="deleteOption(event)">X</button>
-									<br>
-								</div>
+						@for ($i = 0; $i < count($dirs); $i++)
+							<div id="p{{ $i }}" class="col plugin-frame" style="overflow-y: scroll; display: none">
+								@component($dirs[$i].'.plugin')
+								
+									@slot('path')
+										./../resources/plugins/{{$dirs[$i]}}/
+									@endslot
+							
+								@endcomponent
 							</div>
-							<br>
-
-							<input id="addInput" type="text" style="width: 95%">
-							<button id="btnAddInput" onclick="addOption()">+</button><br>
-
-							<script src="./js/pluginScript.js"></script>
-							<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-						</div>
-						<div id="p2" class="col plugin-frame" style="overflow-y: scroll; display: none">Plugin2</div>
-						<div id="p3" class="col plugin-frame" style="overflow-y: scroll; display: none">Plugin3</div>
+						@endfor
 					</div>
 				</div>
 			</div>
@@ -304,6 +291,7 @@
 
 	<script src="./js/Journey.js"></script>
 	<script src="./js/Scene.js"></script>
+	<script src="./js/Challenge.js"></script>
 	<script src="./js/SceneConnection.js"></script>
 	<script src="./js/scripts.js"></script>
 	<script src='./js/konvaScripts.js'></script>

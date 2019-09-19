@@ -1,20 +1,41 @@
+class DataClosed {
+	constructor() {
+		this.plugin = "closedquestion";
+        this.question = "Aqui é a pergunta fechada";
+		this.answers = [];
+    }
+	
+	SaveData(){
+		return JSON.stringify(this);
+	}
+}
+
+var data = new DataClosed();
+
+function closedquestion(){
+	return data;
+}
+
+console.log(window["closedquestion"]());
+
 function getPoints() {
     return 10;
 }
 
 function addOption() {
     var input = document.getElementById("addInput");
-    var text = "<div>";
-    text += "<input type=\"checkbox\" name=\"alternativa\" value=\"op1\">";
-    text += "<label style=\"margin-left: 10px\">" + input.value + " </label>";
-    text += "<button onclick=\"deleteOption(event)\" style=\"margin-left: 10px\">X</button>";
-    text += "<br>";
-    text += "</div>";
+	if(input.value != ""){
+		var text = "<div style=\"width: inherit\">";
+		text += "<button class=\"pf-delete-btn\" onclick=\"deleteOption(event)\">X</button>";
+		text += "<label><input class=\"pf-checkbox-size\" type=\"checkbox\" name=\"alternativa\" value=\"op1\"> " + input.value + "</label>";
+		text += "<br>";
+		text += "</div>";
 
-    console.log(text);
+		console.log(text);
 
-    input.value = "";
-    $('#options').append(text);
+		input.value = "";
+		$('#options').append(text);
+	}
 }
 
 window.onload = function() {
