@@ -1,5 +1,8 @@
 var tool;
 var journey = new Journey('Test');
+var selectedScene;
+var selectedChallenge;
+console.log(pluginList);
 
 function openTab(evt, tab) {
     // Declare all variables
@@ -41,6 +44,30 @@ function openTabScene() {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById("Cena").style.display = "block";
     document.getElementById("CenaTab").className += " active";
+}
+
+function openTabChallenge(challenge) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+	var plugin = challenge.plugin;
+	
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById("Desafio").style.display = "block";
+    document.getElementById("DesafioTab").className += " active";
+	document.getElementById("btn-" + plugin).click();
 }
 
 document.getElementById("defaultOpen").click();
@@ -158,6 +185,8 @@ function openScene(evt, scene) {
     sel = scene;
     openTabScene();
     loadText(scene);
+	selectedScene = journey.getSceneByName(scene);
+	console.log(selectedScene);
 }
 
 function openDesafio(evt) {
@@ -169,6 +198,18 @@ function openDesafio(evt) {
     }
 
     evt.currentTarget.parentNode.className += " active";
+	
+	if(selectedChallenge != null){
+		selectedChallenge.data.SaveData();
+	}
+	
+	var challenge = evt.currentTarget.parentNode.id;
+	challenge = challenge.split("d");
+	challenge = "d" + challenge[1];
+	selectedChallenge = selectedScene.getChallengeByName(challenge);
+	
+	openTabChallenge(selectedChallenge);
+	selectedChallenge.data.LoadData();
 }
 
 function addCena(evt) {
@@ -218,7 +259,8 @@ function addDesafio(evt, selector) {
     $('#' + selector).append(textBlock);
 	
 	var desafio = new Challenge(numeroDesafio, 'd' + numeroDesafio);
-	desafio.data = getSelectedPluginData();
+
+	desafio.data = window[pluginList[0]]();
 	scene.addChallenge(desafio);
 }
 
@@ -330,14 +372,6 @@ function selectedTool(evt) {
     evt.currentTarget.parentNode.parentNode.className += " act";
 }
 
-function getSelectedPluginData(){
-	if (desafio == "closedquestion"){
-		return new DataClosed();
-	} else if (desafio == "connection"){
-		return new DataConnection();
-	}
-}
-
 function selectPlugin(evt, p){
     var i, plugins;
     // Get all elements with class="tablinks" and remove the class "active"
@@ -349,7 +383,6 @@ function selectPlugin(evt, p){
    //tool = evt.currentTarget.getAttribute('id');
     evt.currentTarget.className += " active";
 
-
     box = document.getElementById(p);
 
     var frames = document.getElementsByClassName("plugin-frame");
@@ -358,11 +391,17 @@ function selectPlugin(evt, p){
     }
 
     box.style.display = "block";
-    console.log(box);
+	
+	selectedChallenge.plugin = p;
+	selectedChallenge.data = window[pluginList[p.substring(1)]]();
 }
 
 function saveData(){
-	
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
 	$.ajax({
 		url:'./save',
 		type: 'POST',
