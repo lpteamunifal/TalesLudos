@@ -285,10 +285,10 @@
           return;
         }
 
-       /* if (!isValidChar(currentGuess) || guessedChars.includes(currentGuess)) {
+        if ( guessedChars.includes(currentGuess)) {
           console.log('Invalid guess');
           return;
-        } */
+        } 
 
         guessedChars.push(currentGuess);
 
