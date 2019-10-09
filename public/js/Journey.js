@@ -1,9 +1,27 @@
 class Journey {
 
-    constructor(name){
+    constructor(name, width, height){
         this.name = name;
         this.sceneNumber = 0;
         this.scenes = [];
+        this.width = width;
+        this.height = height;
+    }
+
+    get getWidth(){
+        return this.width;
+    }
+
+    set setWidth(width){
+        this.width = width;
+    }
+
+    get getHeight(){
+        return this.height;
+    }
+
+    set setHeight(height){
+        this.height = height;
     }
 
     get getName(){

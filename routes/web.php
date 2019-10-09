@@ -14,17 +14,15 @@
 use Illuminate\Support\Facades\Log;
 
 Route::get('/', function () {
-	$plugins = scandir('./../resources/plugins/');
-	$dir = array_shift($plugins);
-	$dir = array_shift($plugins);
-    return view('index', compact("plugins"));
+    return view('index');
 });
+
+
 
 Route::group(['middleware' => 'web'] , function(){
 
 	Route::post('login', "UserController@login");
 	Route::post('register', "UserController@register");
-	Route::post('/save', "ProjectController@tmpsave");
 });
 
 $router->group(['middleware' => 'auth'], function() {
@@ -35,5 +33,6 @@ $router->group(['middleware' => 'auth'], function() {
 $router->group(['middleware' => 'guest'], function() {
     Route::post('/save', "ProjectController@tmpsave");
 	Route::get('/view', "ProjectController@view");
+	Route::get('/viewGame/{data}', "ProjectController@viewGame");
 });
 

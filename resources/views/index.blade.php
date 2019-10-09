@@ -4,7 +4,6 @@
 	<title>Tales Ludos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
@@ -68,7 +67,7 @@
 			@if(Auth::check())
 				<button class="btn right"><i class="fa fa-save"></i> Salvar Projeto</button>
 			@endif
-			<button class="btn right" onclick="saveData()"><i class="fa fa-play"></i> Visualizar</button>
+			<button class="btn right" onclick="openViewOfGame()"><i class="fa fa-play"></i> Visualizar</button>
 			<button class="btn right"><i class="fa fa-download"></i> Exportar</button>
 			<div id="Jornada" class="frame1 tabcontent">
 				<div class="tool-bar">
@@ -282,10 +281,6 @@
             theme: 'snow'
         });
 	</script>
-	
-	<script>
-		var pluginList = {!! json_encode($plugins) !!};
-	</script>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -300,6 +295,18 @@
 	<script src="./js/SceneConnection.js"></script>
 	<script src="./js/scripts.js"></script>
 	<script src='./js/konvaScripts.js'></script>
+
+	<script>
+			function openViewOfGame(){
+			    var encondedGame = btoa(JSON.stringify(journey));
+
+			    var url = '{{URL::to("viewGame",":data")}}';
+
+			    url = url.replace('%3Adata', encondedGame)
+
+			    window.open(url);
+			}
+	</script>
 
 
 </body>

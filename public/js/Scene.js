@@ -8,6 +8,9 @@ class Scene {
         //Conteudo da cena em html
         this.content = "";
         this.konvaObject = konvaObject;
+        this.x = konvaObject.x();
+        this.y = konvaObject.y();
+        this.circle = konvaObject.getChildren(function(node){return node.getClassName() === 'Circle';});
         this.previousScenes = [];
         this.nextScenes = [];
         this.challengeNumber = 0;
@@ -29,6 +32,30 @@ class Scene {
 
     set setName(name){
         this.name = name;
+    }
+
+    get getX(){
+        return this.x;
+    }
+
+    set setX(x){
+        this.x = x;
+    }
+
+    get getY(){
+        return this.y;
+    }
+
+    set setY(y){
+        this.y = y;
+    }
+
+    get getCircle(){
+        return this.circle;
+    }
+
+    set setCircle(circle){
+        this.circle = circle;
     }
 
     get getElement(){
@@ -128,5 +155,7 @@ class Scene {
 
         children.innerHTML = this.modal
         body.appendChild(children);
+
+        this.modal = "";
     }
 }

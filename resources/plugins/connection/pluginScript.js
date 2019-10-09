@@ -8,15 +8,9 @@ class DataConnection {
 	SaveData(){
 		return JSON.stringify(this);
 	}
-	
-	LoadData(){
-		
-	}
 }
 
-function connection(){
-	return new DataConnection();
-}
+var data = new DataConnection();
 
 function getPoints() {
     return 10;

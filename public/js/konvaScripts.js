@@ -10,6 +10,8 @@ window.journeyStage = new Konva.Stage({
 	height: stageHeight
 });
 
+journey.setHeight = stageHeight;
+
 var scenesLayer = new Konva.Layer();
 
 var scenes = new Array();
@@ -157,6 +159,9 @@ window.addSceneCircleInJourney = function (sceneNumber)
 
 		var scene = journey.getSceneById(sceneId);
 
+		scene.setX = group.x();
+		scene.setY = group.y();
+
 		var nextConnections = scene.getNextScenes;
 		var previousConnections = scene.getPreviousScenes;
 
@@ -179,6 +184,8 @@ window.addSceneCircleInJourney = function (sceneNumber)
 			scenesLayer.draw();
 		});
 	});
+
+	return group;
 }
 
 journeyStage.on('click tap', function(e){

@@ -1,5 +1,5 @@
 var tool;
-var journey = new Journey('Test', document.getElementById('box-jornada').clientWidth, document.getElementById('box-jornada').clientHeight);
+var journey = new Journey('Test');
 
 function openTab(evt, tab) {
     // Declare all variables
@@ -48,8 +48,8 @@ document.getElementById("defaultOpen").click();
 var y = document.getElementById("topnav");
 if ($(window).width() < 1000) {
         if(y.className === "topnav"){
-        y.className = "topnav hidden";
-    }
+	    y.className = "topnav hidden";
+	}
 }
 
 $('.frame').css('width','100%');
@@ -62,10 +62,10 @@ $(window).resize(function(){
         if(x.className === "col-8 frame-fixer") {
             x.className = "col-10 frame-fixer";
         }
-    if(y.className === "topnav"){
-        y.className = "topnav hidden";
-    }
-    document.getElementById("frame-div").style.marginRight="auto";
+	if(y.className === "topnav"){
+	    y.className = "topnav hidden";
+	}
+	document.getElementById("frame-div").style.marginRight="auto";
         document.getElementById("frame-div").style.marginLeft="auto";
     }
     else {
@@ -122,13 +122,13 @@ var sel = 'c1';
 function saveText() {
     var s = journey.getSceneByName(sel);
     var text = document.getElementsByClassName("ql-editor")[0].innerHTML;
-    s.setContent = text;
+    s.setContainer(text);
 }
 
 function loadText(scene) {
     var s = journey.getSceneByName(scene);
     var editor = document.getElementsByClassName("ql-editor")[0];
-    editor.innerHTML = s.getContent;
+    editor.innerHTML = s.getContainer();
 }
 
 function openScene(evt, scene) {
@@ -202,12 +202,14 @@ function addCena(evt) {
 
     $('#cenaSelector').append(element);
     
-    //console.log(journey);
+    console.log(journey);
 }
 
 function addDesafio(evt, selector) {
     var scene = journey.getSceneByName('c' + selector.substring(2));
-	
+
+    console.log('c' + selector.substring(2));
+
     var numeroDesafio = scene.getNextChallengeNumber;
     var textBlock = '';
     textBlock += '<div id="c' + selector.substring(2) + 'd' + numeroDesafio + '" class="subaccordion desafio">';
@@ -216,10 +218,6 @@ function addDesafio(evt, selector) {
     textBlock += '</div>';
 
     $('#' + selector).append(textBlock);
-	
-	var desafio = new Challenge(numeroDesafio, 'd' + numeroDesafio);
-	desafio.data = getSelectedPluginData();
-	scene.addChallenge(desafio);
 }
 
 function deleteWarning(evt, cena) {
@@ -272,7 +270,7 @@ function deleteDesafio(evt, desafio) {
 }
 
 $("#file-input").change(function(){
-    var file = this.files[0];
+	var file = this.files[0];
     var reader = new FileReader();
     reader.onloadend = function () {
        $('#box-jornada').css('background-image', 'url("' + reader.result + '")');
@@ -301,9 +299,6 @@ function register_function(){
    document.getElementById("modal-register").style.display = "block";
 }
 
-window.connectionMode = false;
-window.resizeMode = false;
-
 function selectedTool(evt) {
     // Declare all variables
     var i, links;
@@ -316,26 +311,7 @@ function selectedTool(evt) {
 
     tool = evt.currentTarget.parentNode.parentNode.getAttribute('id');
 
-    if(tool == "t2")
-    {
-        window.connectionMode = true;
-        window.resizeMode = false;
-    }
-    else if (tool == "t1")
-    {
-        window.connectionMode = false;
-        window.resizeMode = true;
-    }
-    
     evt.currentTarget.parentNode.parentNode.className += " act";
-}
-
-function getSelectedPluginData(){
-	if (desafio == "closedquestion"){
-		return new DataClosed();
-	} else if (desafio == "connection"){
-		return new DataConnection();
-	}
 }
 
 function selectPlugin(evt, p){
@@ -358,22 +334,6 @@ function selectPlugin(evt, p){
     }
 
     box.style.display = "block";
-    console.log(box);
 }
 
-function saveData(){
-	$.ajax({
-		url:'./save',
-		type: 'POST',
-        data: JSON.stringify(journey),
-		contentType: "json",
-        processData: false,
-        success: function(data){
-            /*var encondedData = btoa(data);
-            window.open('./viewGame' + '?data='+encondedData);*/
-        },
-        error: function(data){
-            alert(data);
-        }
-	});
-}
+//$("#p1").load("./pluginFechado.html");
