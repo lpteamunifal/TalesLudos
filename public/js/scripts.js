@@ -1,5 +1,6 @@
 var tool;
 var journey = new Journey('Test', document.getElementById('box-jornada').clientWidth, document.getElementById('box-jornada').clientHeight);
+console.log('a');
 
 function openTab(evt, tab) {
     // Declare all variables

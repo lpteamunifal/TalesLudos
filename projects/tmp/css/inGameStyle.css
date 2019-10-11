@@ -1,0 +1,58 @@
+body {
+	background-color: #e6f3ff;
+}
+
+.game-container{
+	background-color: #fff;
+	margin: auto;
+  	border-color: #000;
+  	border-width: 1px;
+  	border-style: solid;
+}
+
+.journeyName{
+	font-family: Lemon;
+}
+
+/*Modal*/
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: white;
+	background-color: rgba(0,0,0,0.4);
+	padding-top: 100px;
+}
+/* Modal Header */
+.modal-header {
+	padding: 2px 16px;
+	margin-bottom: 20px; 
+}
+
+/* Modal Body */
+.modal-body {padding: 8px 16px 5px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+	padding: 5px 16px 10px 16px;
+	text-align: center;
+}
+
+/* Modal Content */
+.modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 10px;
+	border: 1px solid #888;
+	border-radius: 10px;
+	width: 40%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
