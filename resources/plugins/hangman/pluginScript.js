@@ -1,7 +1,37 @@
-;(	
-    function(window, document) {
+;(
+  
 	
+	
+	function(window, document) {
 		
+	class DataHangman{
+		constructor() {
+			this.plugin = "hangman";
+			this.answer = "Joana D'Arc";
+			this.dica = "Heroína francesa";
+		}
+		
+		SaveData(){
+			var answer = document.getElementById("answer");
+			this.answer = answer.value;
+			
+			var dica = document.getElementById("dica");
+			this.dica = dica.value;
+		}
+		
+		LoadData(){
+			var answer = document.getElementById("answer");
+			answer.value = this.answer;
+		
+			var dica = document.getElementById("dica");
+			dica.value = this.dica;	
+
+		}
+	} 
+	
+	function hangman(){
+		return new DataHangman();
+	}		
 		
 		const availableChars = [
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -205,10 +235,6 @@
        * Recupera o palpite atual e retorna para a função validadeCurrentGuess(). 
        */
       function addGuessListener() {
-
-        document.onkeydown = function(event) {
-          validateCurrentGuess(event.key.toUpperCase());
-        };
 
         availableCharsSelector.addEventListener('click', function(event) {
           if (event.target.matches('li')) {

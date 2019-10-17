@@ -67,8 +67,10 @@
 			@if(Auth::check())
 				<button class="btn right"><i class="fa fa-save"></i> Salvar Projeto</button>
 			@endif
+
 			<button class="btn right" onclick="openViewOfGame()"><i class="fa fa-play"></i> Visualizar</button>
-			<button class="btn right"><i class="fa fa-download"></i> Exportar</button>
+			<button class="btn right" onclick="saveData()"><i class="fa fa-download"></i> Exportar</button>
+
 			<div id="Jornada" class="frame1 tabcontent">
 				<div class="tool-bar">
 					<div id="t1" class="tool-bar-item act">
