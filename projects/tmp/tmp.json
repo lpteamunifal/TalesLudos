@@ -1,12 +1,17 @@
-[
-    {
-        "sceneId": 1,
-        "sceneName": "c1",
-        "sceneContent": "<p><span class="ql-size-huge" style="color: rgb(230, 0, 0);">A Rosa</span></p><p>Era uma vez, <strong>um menino!</strong></p><p>No caminho ele encontrou uma <span style="color: rgb(230, 0, 0);">Rosa.</span></p>"
-    },
-    {
-        "sceneId": 2,
-        "sceneName": "c2",
-        "sceneContent": "<p><br></p>"
-    }
-]
+var data = {
+    "name": "Test",
+    "sceneNumber": 1,
+    "scenes": [
+        {
+            "id": 1,
+            "name": "c1",
+            "element": {},
+            "content": "",
+            "previousScenes": [],
+            "nextScenes": [],
+            "challengeNumber": 0,
+            "challenge": [],
+            "modal": ""
+        }
+    ]
+};

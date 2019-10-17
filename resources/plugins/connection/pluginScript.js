@@ -1,3 +1,23 @@
+class DataConnection {
+	constructor() {
+		this.plugin = "connection";
+        this.question = "Aqui é o connection";
+		this.answers = [];
+    }
+	
+	SaveData(){
+		return JSON.stringify(this);
+	}
+	
+	LoadData(){
+		
+	}
+}
+
+function connection(){
+	return new DataConnection();
+}
+
 function getPoints() {
     return 10;
 }

@@ -14,13 +14,17 @@
 use Illuminate\Support\Facades\Log;
 
 Route::get('/', function () {
-    return view('index');
+	$plugins = scandir('./../resources/plugins/');
+	$dir = array_shift($plugins);
+	$dir = array_shift($plugins);
+    return view('index', compact("plugins"));
 });
 
 Route::group(['middleware' => 'web'] , function(){
 
 	Route::post('login', "UserController@login");
 	Route::post('register', "UserController@register");
+	Route::post('/save', "ProjectController@tmpsave");
 });
 
 $router->group(['middleware' => 'auth'], function() {

@@ -1,5 +1,8 @@
 var tool;
 var journey = new Journey('Test');
+var selectedScene;
+var selectedChallenge;
+console.log(pluginList);
 
 function openTab(evt, tab) {
     // Declare all variables
@@ -41,6 +44,30 @@ function openTabScene() {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById("Cena").style.display = "block";
     document.getElementById("CenaTab").className += " active";
+}
+
+function openTabChallenge(challenge) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+	var plugin = challenge.plugin;
+	
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById("Desafio").style.display = "block";
+    document.getElementById("DesafioTab").className += " active";
+	document.getElementById("btn-" + plugin).click();
 }
 
 document.getElementById("defaultOpen").click();
@@ -158,6 +185,7 @@ function openScene(evt, scene) {
     sel = scene;
     openTabScene();
     loadText(scene);
+	selectedScene = journey.getSceneByName(scene);
 }
 
 function openDesafio(evt) {
@@ -169,6 +197,18 @@ function openDesafio(evt) {
     }
 
     evt.currentTarget.parentNode.className += " active";
+	
+	if(selectedChallenge != null){
+		selectedChallenge.data.SaveData();
+	}
+	
+	var challenge = evt.currentTarget.parentNode.id;
+	challenge = challenge.split("d");
+	challenge = "d" + challenge[1];
+	selectedChallenge = selectedScene.getChallengeByName(challenge);
+	
+	openTabChallenge(selectedChallenge);
+	selectedChallenge.data.LoadData();
 }
 
 function addCena(evt) {
@@ -207,9 +247,7 @@ function addCena(evt) {
 
 function addDesafio(evt, selector) {
     var scene = journey.getSceneByName('c' + selector.substring(2));
-
-    console.log('c' + selector.substring(2));
-
+	
     var numeroDesafio = scene.getNextChallengeNumber;
     var textBlock = '';
     textBlock += '<div id="c' + selector.substring(2) + 'd' + numeroDesafio + '" class="subaccordion desafio">';
@@ -218,6 +256,10 @@ function addDesafio(evt, selector) {
     textBlock += '</div>';
 
     $('#' + selector).append(textBlock);
+	
+	var desafio = new Challenge(numeroDesafio, 'd' + numeroDesafio);
+	desafio.data = window[pluginList[0]]();
+	scene.addChallenge(desafio);
 }
 
 function deleteWarning(evt, cena) {
@@ -327,6 +369,7 @@ function selectedTool(evt) {
     
     evt.currentTarget.parentNode.parentNode.className += " act";
 }
+
 function selectPlugin(evt, p){
     var i, plugins;
     // Get all elements with class="tablinks" and remove the class "active"
@@ -338,7 +381,6 @@ function selectPlugin(evt, p){
    //tool = evt.currentTarget.getAttribute('id');
     evt.currentTarget.className += " active";
 
-
     box = document.getElementById(p);
 
     var frames = document.getElementsByClassName("plugin-frame");
@@ -347,28 +389,23 @@ function selectPlugin(evt, p){
     }
 
     box.style.display = "block";
-    console.log(box);
+	
+	selectedChallenge.plugin = p;
+	selectedChallenge.data = window[pluginList[p.substring(1)]]();
 }
 
 function saveData(){
-	var scenes = journey.scenes;
-	var data = [];
-	
-	for(var i = 0; i < scenes.length; i++) {
-		var scene = {};
-		scene["sceneId"] = scenes[i].id;
-		scene["sceneName"] = scenes[i].name;
-		scene["sceneContent"] = scenes[i].content;
-		data[i] = scene;
-	}
-	
-	console.log(data);
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
 	$.ajax({
 		url:'./save',
 		type: 'POST',
 		dataType:'json',
 		contentType: 'json',
-		data: JSON.stringify(data),
+		data: JSON.stringify(journey),
 		contentType: 'application/json; charset=utf-8',
 	});
 	setTimeout(function () {

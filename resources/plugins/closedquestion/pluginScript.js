@@ -1,3 +1,46 @@
+class DataClosed {
+	constructor() {
+		this.plugin = "closedquestion";
+        this.question = "Aqui é a pergunta fechada";
+		this.answers = [];
+		this.correct = 0;
+    }
+	
+	SaveData(){
+		var question = document.getElementById("closed-question");
+		this.question = question.value;
+		
+		var options = document.getElementById("options");
+		var labels = options.getElementsByTagName("label");
+		for(var i = 0; i < options.length; i++){
+			this.answers.push(options.value);
+		}
+		console.log(labels);
+	}
+	
+	LoadData(){
+		var question = document.getElementById("closed-question");
+		question.value = this.question;
+		
+		document.getElementById("options").innerHTML = "";
+		
+		for(var i = 0; i < this.answers.length; i++){
+			var text = "<div style=\"width: inherit\">";
+			text += "<button class=\"pf-delete-btn\" onclick=\"deleteOption(event)\">X</button>";
+			text += "<label><input class=\"pf-checkbox-size\" type=\"checkbox\" name=\"alternativa\" value=\"op1\"> " + this.answers[i] + "</label>";
+			text += "<br>";
+			text += "</div>";
+			$('#options').append(text);
+		}
+	}
+}
+
+function closedquestion(){
+	return new DataClosed();
+}
+
+//console.log(window["closedquestion"]());
+
 function getPoints() {
     return 10;
 }

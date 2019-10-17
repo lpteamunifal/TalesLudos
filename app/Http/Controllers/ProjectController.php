@@ -14,20 +14,16 @@ class ProjectController extends Controller
 	}
 	
 	public function tmpsave(Request $request){
-		$this->wait = true;
 		$data = json_decode($request->getContent());
-		
-		Log::info($request);
 		
 		// Write File
 		$newJsonString = json_encode($data, JSON_PRETTY_PRINT);
-		file_put_contents(base_path('projects/tmp/tmp.json'), stripslashes($newJsonString));
-		$this->wait = false;
+		$string = "var data = " . stripslashes($newJsonString) . ";";
+
+		file_put_contents(base_path('projects/tmp/tmp.json'), $string);
 	}
 	
-	public function view(Request $request){
-		while($this->wait){}
-		
+	public function view(Request $request){		
 		return file_get_contents(base_path('projects/tmp/tmp.json'));
 	}
 }
