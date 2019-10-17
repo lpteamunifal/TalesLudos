@@ -1,4 +1,4 @@
-;(	
+;(
   
 	
 	
@@ -31,8 +31,7 @@
 	
 	function hangman(){
 		return new DataHangman();
-	}
-		
+	}		
 		
 		const availableChars = [
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -236,10 +235,6 @@
        * Recupera o palpite atual e retorna para a função validadeCurrentGuess(). 
        */
       function addGuessListener() {
-
-        /*document.onkeydown = function(event) {
-          validateCurrentGuess(event.key.toUpperCase());
-        };*/
 
         availableCharsSelector.addEventListener('click', function(event) {
           if (event.target.matches('li')) {
