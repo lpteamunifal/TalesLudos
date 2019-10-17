@@ -254,6 +254,10 @@
 			 	</div>
 		</div>
     </div>
+	
+	<script>
+		var pluginList = {!! json_encode($plugins) !!};
+	</script>
 
 	<!-- Include the Quill library -->
 	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>

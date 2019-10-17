@@ -14,7 +14,10 @@
 use Illuminate\Support\Facades\Log;
 
 Route::get('/', function () {
-    return view('index');
+    $plugins = scandir('./../resources/plugins/');
+	$dir = array_shift($plugins);
+	$dir = array_shift($plugins);
+    return view('index', compact("plugins"));
 });
 
 
