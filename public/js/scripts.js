@@ -392,6 +392,7 @@ function selectPlugin(evt, p){
     box.style.display = "block";
     
     selectedChallenge.plugin = p;
+    console.log(pluginList[p.substring(1)]);
 	selectedChallenge.data = window[pluginList[p.substring(1)]]();
 }
 

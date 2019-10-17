@@ -4,13 +4,19 @@ class DataConnection {
         this.question = "Aqui é o connection";
 		this.answers = [];
     }
-	
+
 	SaveData(){
 		return JSON.stringify(this);
 	}
+
+	LoadData(){
+
+	}
 }
 
-var data = new DataConnection();
+function connection(){
+	return new DataConnection();
+}
 
 function getPoints() {
     return 10;
