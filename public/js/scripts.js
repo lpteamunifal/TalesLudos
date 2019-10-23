@@ -186,6 +186,7 @@ function openScene(evt, scene) {
     openTabScene();
     loadText(scene);
 	selectedScene = journey.getSceneByName(scene);
+	console.log(selectedScene);
 }
 
 function openDesafio(evt) {
@@ -258,6 +259,7 @@ function addDesafio(evt, selector) {
     $('#' + selector).append(textBlock);
 	
 	var desafio = new Challenge(numeroDesafio, 'd' + numeroDesafio);
+
 	desafio.data = window[pluginList[0]]();
 	scene.addChallenge(desafio);
 }
