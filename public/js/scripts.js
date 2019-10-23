@@ -67,7 +67,8 @@ function openTabChallenge(challenge) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById("Desafio").style.display = "block";
     document.getElementById("DesafioTab").className += " active";
-	document.getElementById("btn-" + plugin).click();
+    
+    selectPlugin1(plugin);
 }
 
 document.getElementById("defaultOpen").click();
@@ -391,7 +392,29 @@ function selectPlugin(evt, p){
     box.style.display = "block";
 	
 	selectedChallenge.plugin = p;
-	selectedChallenge.data = window[pluginList[p.substring(1)]]();
+	selectedChallenge.data = eval(pluginList[p.substring(1)])();
+}
+
+function selectPlugin1(p){
+    var i, plugins;
+    // Get all elements with class="tablinks" and remove the class "active"
+    plugins = document.getElementsByClassName("btn-plugin");
+    for (i = 0; i < plugins.length; i++) {
+        plugins[i].className = plugins[i].className.replace(" active", "");
+    }
+
+    document.getElementById('btn-' + p).className += " active";
+
+    box = document.getElementById(p);
+
+    var frames = document.getElementsByClassName("plugin-frame");
+    for (i = 0; i < frames.length; i++) {
+        frames[i].style.display = "none";
+    }
+
+    box.style.display = "block";
+	
+	selectedChallenge.plugin = p;
 }
 
 function saveData(){
