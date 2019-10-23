@@ -1,29 +1,21 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-	<title>Tales Ludos</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>In Game</title>
 	<link rel="stylesheet" href="./css/inGameStyle.css">
 	<link rel="stylesheet" type="text/css" href="./css/font.css" />
 	<script src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script src="./js/popper.min.js"></script>
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/jquery.modal.min.js"></script>
+
 </head>
-<body class="container-fluid">
 
-	<script src="./tmp.json"></script>
-
+<body>
 	<center> <h2 id='journeyName' class='journeyName'> Bem vindo a Jornada </h2> </center>
 	<div id='game-container' class='game-container'>
 
 	</div>
-	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 
 	<script src="./js/konva.min.js"></script>
 
@@ -32,22 +24,28 @@
 	<script src='./js/Challenge.js'></script>	
 	<script src='./js/KonvaFabric.js'></script>
 	<script src='./js/gameLoad.js'></script>
+	
 
+	<input type="file" id="file" name="file" onchange="add(event)"/>
+	
 	<script type="text/javascript">
 		function add(event){
 			var userfile = document.getElementById('file');
 			userfile.src = URL.createObjectURL(event.target.files[0]);
 			var data = userfile.src;
 			console.log(data);
+		
 		}
-
 		//var json = atob("{{$data}}");
 		//var json = $.getJSON({'url':"tmp.json", 'async':false});
 		//json = JSON.parse(json.responseText);
 		//document.write(json);
 		//gameLoad(json);
 		//console.log(json);
+
 	</script>
 
 </body>
+
+
 </html>
