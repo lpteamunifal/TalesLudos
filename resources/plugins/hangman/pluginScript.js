@@ -1,8 +1,40 @@
+class DataHangman{
+  constructor() {
+    this.plugin = "hangman";
+    this.answer = "Joana D'Arc";
+    this.dica = "Heroína francesa";
+  }
+  
+  SaveData(){
+    var i = document.getElementById("answer");
+    this.answer = i.value;
+    console.log(i.value);
+    console.log(this.answer);
+    var dica = document.getElementById("dica");
+    this.dica = dica.value;
+  }
+  
+  LoadData(){
+    var i = document.getElementById("answer");
+    i.value = this.answer;
+    console.log(i.value);
+    console.log(this.answer);
+    var dica = document.getElementById("dica");
+    dica.value = this.dica;	
+
+  }
+} 
+
+function hangman(){
+  return new DataHangman();
+}
+
 ;(	
-    function(window, document) {
+  
 	
-		
-		
+	
+	function(window, document) {
+  	
 		const availableChars = [
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
             'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
@@ -206,9 +238,9 @@
        */
       function addGuessListener() {
 
-        document.onkeydown = function(event) {
+        /*document.onkeydown = function(event) {
           validateCurrentGuess(event.key.toUpperCase());
-        };
+        };*/
 
         availableCharsSelector.addEventListener('click', function(event) {
           if (event.target.matches('li')) {
@@ -254,10 +286,10 @@
           return;
         }
 
-        if (!isValidChar(currentGuess) || guessedChars.includes(currentGuess)) {
+       /* if (!isValidChar(currentGuess) || guessedChars.includes(currentGuess)) {
           console.log('Invalid guess');
           return;
-        }
+        } */
 
         guessedChars.push(currentGuess);
 

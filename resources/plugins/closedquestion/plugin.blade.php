@@ -4,7 +4,7 @@
     <h1>Pergunta fechada</h1>
     <br>
     <label>Pergunta:</label><br>
-    <textarea type="text" rows="4" style="width: 100%"></textarea><br>
+    <textarea id="closed-question" type="text" rows="4" style="width: 100%"></textarea><br>
 
     <br>
 
