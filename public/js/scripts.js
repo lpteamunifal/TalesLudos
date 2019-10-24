@@ -1,6 +1,7 @@
 var tool;
 var journey = new Journey('Test', document.getElementById('box-jornada').clientWidth, document.getElementById('box-jornada').clientHeight);
-console.log('a');
+var selectedScene;
+var selectedChallenge;
 
 function openTab(evt, tab) {
     // Declare all variables
@@ -44,6 +45,31 @@ function openTabScene() {
     document.getElementById("CenaTab").className += " active";
 }
 
+function openTabChallenge(challenge) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+	var plugin = challenge.plugin;
+	
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById("Desafio").style.display = "block";
+    document.getElementById("DesafioTab").className += " active";
+    
+    selectPlugin1(plugin);
+}
+
 document.getElementById("defaultOpen").click();
 
 var y = document.getElementById("topnav");
@@ -76,9 +102,6 @@ $(window).resize(function(){
 
     $('.frame').css('width','100%');
     $('.frame').height($('.frame').width() / 2.031);
-
-    console.log($('.frame').width());
-    console.log($('.frame').height());
     
     var resizeWidth = document.getElementById('box-jornada').clientWidth;
     var resizeHeight = document.getElementById('box-jornada').clientHeight;
@@ -87,7 +110,6 @@ $(window).resize(function(){
     
     journeyStage.width(resizeWidth);
     journeyStage.height(resizeHeight);
-    //journeyStage.scale({x: scale, y: scale});
     journeyStage.draw();
 });
 
@@ -159,6 +181,7 @@ function openScene(evt, scene) {
     sel = scene;
     openTabScene();
     loadText(scene);
+    selectedScene = journey.getSceneByName(scene);
 }
 
 function openDesafio(evt) {
@@ -170,6 +193,18 @@ function openDesafio(evt) {
     }
 
     evt.currentTarget.parentNode.className += " active";
+
+    if(selectedChallenge != null){
+		selectedChallenge.data.SaveData();
+	}
+	
+	var challenge = evt.currentTarget.parentNode.id;
+	challenge = challenge.split("d");
+	challenge = "d" + challenge[1];
+	selectedChallenge = selectedScene.getChallengeByName(challenge);
+	
+	openTabChallenge(selectedChallenge);
+	selectedChallenge.data.LoadData();
 }
 
 function addCena(evt) {
@@ -202,8 +237,6 @@ function addCena(evt) {
     journey.addScene(scene);
 
     $('#cenaSelector').append(element);
-    
-    //console.log(journey);
 }
 
 function addDesafio(evt, selector) {
@@ -219,7 +252,7 @@ function addDesafio(evt, selector) {
     $('#' + selector).append(textBlock);
 	
 	var desafio = new Challenge(numeroDesafio, 'd' + numeroDesafio);
-	desafio.data = getSelectedPluginData();
+	desafio.data = window[pluginList[0]]();
 	scene.addChallenge(desafio);
 }
 
@@ -254,8 +287,6 @@ function deleteCena(evt, cena) {
     var sceneNumber = cena.substring(1);
 
     journey.deleteSceneByName('c' + sceneNumber);
-
-    console.log(sceneNumber);
 
     removeSceneCircleFromJourney(sceneNumber);
 
@@ -331,14 +362,6 @@ function selectedTool(evt) {
     evt.currentTarget.parentNode.parentNode.className += " act";
 }
 
-function getSelectedPluginData(){
-	if (desafio == "closedquestion"){
-		return new DataClosed();
-	} else if (desafio == "connection"){
-		return new DataConnection();
-	}
-}
-
 function selectPlugin(evt, p){
     var i, plugins;
     // Get all elements with class="tablinks" and remove the class "active"
@@ -350,6 +373,29 @@ function selectPlugin(evt, p){
    //tool = evt.currentTarget.getAttribute('id');
     evt.currentTarget.className += " active";
 
+    box = document.getElementById(p);
+
+    var frames = document.getElementsByClassName("plugin-frame");
+    for (i = 0; i < frames.length; i++) {
+        frames[i].style.display = "none";
+    }
+
+    box.style.display = "block";
+    
+    selectedChallenge.plugin = p;
+	selectedChallenge.data = eval(pluginList[p.substring(1)])();
+}
+
+
+function selectPlugin1(p){
+    var i, plugins;
+    // Get all elements with class="tablinks" and remove the class "active"
+    plugins = document.getElementsByClassName("btn-plugin");
+    for (i = 0; i < plugins.length; i++) {
+        plugins[i].className = plugins[i].className.replace(" active", "");
+    }
+
+    document.getElementById('btn-' + p).className += " active";
 
     box = document.getElementById(p);
 
@@ -359,22 +405,22 @@ function selectPlugin(evt, p){
     }
 
     box.style.display = "block";
-    console.log(box);
+	
+	selectedChallenge.plugin = p;
 }
 
 function saveData(){
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
 	$.ajax({
 		url:'./save',
 		type: 'POST',
-        data: JSON.stringify(journey),
-		contentType: "json",
-        processData: false,
-        success: function(data){
-            /*var encondedData = btoa(data);
-            window.open('./viewGame' + '?data='+encondedData);*/
-        },
-        error: function(data){
-            alert(data);
-        }
+		dataType:'json',
+		contentType: 'json',
+		data: JSON.stringify(journey),
+		contentType: 'application/json; charset=utf-8',
 	});
 }
