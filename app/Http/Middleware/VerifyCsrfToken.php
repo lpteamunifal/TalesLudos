@@ -19,6 +19,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'http://localhost/TalesLudos/public/save'
+        'http://localhost/TalesLudos/public/save',
+        'http://localhost/TalesLudos/public/contact'
     ];
 }

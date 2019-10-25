@@ -414,3 +414,23 @@ function saveData(){
         window.open('view', '_blank');
     }, 200);
 }
+
+function rtvProjetos(evt){
+	var div;
+	div = document.getElementById("normalContent");
+	div.display = "none";
+	div = document.getElementById("projectContent");
+	div.display = "visible";
+	div = document.getElementById("dadosContent");
+	div.display = "none";
+}
+
+function updDados(evt){
+	var div;
+	div = document.getElementById("normalContent");
+	div.display = "none";
+	div = document.getElementById("projectContent");
+	div.display = "none";
+	div = document.getElementById("dadosContent");
+	div.display = "visible";
+}

@@ -1,5 +1,8 @@
 var tool;
 var journey = new Journey('Test');
+var selectedScene;
+var selectedChallenge;
+console.log(pluginList);
 
 function openTab(evt, tab) {
     // Declare all variables
@@ -43,13 +46,37 @@ function openTabScene() {
     document.getElementById("CenaTab").className += " active";
 }
 
+function openTabChallenge(challenge) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+	var plugin = challenge.plugin;
+	
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById("Desafio").style.display = "block";
+    document.getElementById("DesafioTab").className += " active";
+	document.getElementById("btn-" + plugin).click();
+}
+
 document.getElementById("defaultOpen").click();
 
 var y = document.getElementById("topnav");
 if ($(window).width() < 1000) {
         if(y.className === "topnav"){
-	    y.className = "topnav hidden";
-	}
+        y.className = "topnav hidden";
+    }
 }
 
 $('.frame').css('width','100%');
@@ -62,10 +89,10 @@ $(window).resize(function(){
         if(x.className === "col-8 frame-fixer") {
             x.className = "col-10 frame-fixer";
         }
-	if(y.className === "topnav"){
-	    y.className = "topnav hidden";
-	}
-	document.getElementById("frame-div").style.marginRight="auto";
+    if(y.className === "topnav"){
+        y.className = "topnav hidden";
+    }
+    document.getElementById("frame-div").style.marginRight="auto";
         document.getElementById("frame-div").style.marginLeft="auto";
     }
     else {
@@ -122,13 +149,13 @@ var sel = 'c1';
 function saveText() {
     var s = journey.getSceneByName(sel);
     var text = document.getElementsByClassName("ql-editor")[0].innerHTML;
-    s.setContainer(text);
+    s.setContent = text;
 }
 
 function loadText(scene) {
     var s = journey.getSceneByName(scene);
     var editor = document.getElementsByClassName("ql-editor")[0];
-    editor.innerHTML = s.getContainer();
+    editor.innerHTML = s.getContent;
 }
 
 function openScene(evt, scene) {
@@ -158,6 +185,8 @@ function openScene(evt, scene) {
     sel = scene;
     openTabScene();
     loadText(scene);
+	selectedScene = journey.getSceneByName(scene);
+	console.log(selectedScene);
 }
 
 function openDesafio(evt) {
@@ -169,6 +198,18 @@ function openDesafio(evt) {
     }
 
     evt.currentTarget.parentNode.className += " active";
+	
+	if(selectedChallenge != null){
+		selectedChallenge.data.SaveData();
+	}
+	
+	var challenge = evt.currentTarget.parentNode.id;
+	challenge = challenge.split("d");
+	challenge = "d" + challenge[1];
+	selectedChallenge = selectedScene.getChallengeByName(challenge);
+	
+	openTabChallenge(selectedChallenge);
+	selectedChallenge.data.LoadData();
 }
 
 function addCena(evt) {
@@ -207,9 +248,7 @@ function addCena(evt) {
 
 function addDesafio(evt, selector) {
     var scene = journey.getSceneByName('c' + selector.substring(2));
-
-    console.log('c' + selector.substring(2));
-
+	
     var numeroDesafio = scene.getNextChallengeNumber;
     var textBlock = '';
     textBlock += '<div id="c' + selector.substring(2) + 'd' + numeroDesafio + '" class="subaccordion desafio">';
@@ -218,6 +257,11 @@ function addDesafio(evt, selector) {
     textBlock += '</div>';
 
     $('#' + selector).append(textBlock);
+	
+	var desafio = new Challenge(numeroDesafio, 'd' + numeroDesafio);
+
+	desafio.data = window[pluginList[0]]();
+	scene.addChallenge(desafio);
 }
 
 function deleteWarning(evt, cena) {
@@ -270,7 +314,7 @@ function deleteDesafio(evt, desafio) {
 }
 
 $("#file-input").change(function(){
-	var file = this.files[0];
+    var file = this.files[0];
     var reader = new FileReader();
     reader.onloadend = function () {
        $('#box-jornada').css('background-image', 'url("' + reader.result + '")');
@@ -299,6 +343,9 @@ function register_function(){
    document.getElementById("modal-register").style.display = "block";
 }
 
+window.connectionMode = false;
+window.resizeMode = false;
+
 function selectedTool(evt) {
     // Declare all variables
     var i, links;
@@ -311,6 +358,17 @@ function selectedTool(evt) {
 
     tool = evt.currentTarget.parentNode.parentNode.getAttribute('id');
 
+    if(tool == "t2")
+    {
+        window.connectionMode = true;
+        window.resizeMode = false;
+    }
+    else if (tool == "t1")
+    {
+        window.connectionMode = false;
+        window.resizeMode = true;
+    }
+    
     evt.currentTarget.parentNode.parentNode.className += " act";
 }
 
@@ -325,7 +383,6 @@ function selectPlugin(evt, p){
    //tool = evt.currentTarget.getAttribute('id');
     evt.currentTarget.className += " active";
 
-
     box = document.getElementById(p);
 
     var frames = document.getElementsByClassName("plugin-frame");
@@ -334,6 +391,46 @@ function selectPlugin(evt, p){
     }
 
     box.style.display = "block";
+	
+	selectedChallenge.plugin = p;
+	selectedChallenge.data = window[pluginList[p.substring(1)]]();
 }
 
-//$("#p1").load("./pluginFechado.html");
+function saveData(){
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+	$.ajax({
+		url:'./save',
+		type: 'POST',
+		dataType:'json',
+		contentType: 'json',
+		data: JSON.stringify(journey),
+		contentType: 'application/json; charset=utf-8',
+	});
+	setTimeout(function () {
+        window.open('view', '_blank');
+    }, 200);
+}
+
+function rtvProjetos(evt){
+	var div;
+	div = document.getElementById("normalContent");
+	div.display = "none";
+	div = document.getElementById("projectContent");
+	div.display = "visible";
+	div = document.getElementById("dadosContent");
+	div.display = "none";
+}
+
+function updDados(evt){
+	var div;
+	div = document.getElementById("normalContent");
+	div.display = "none";
+	div = document.getElementById("projectContent");
+	div.display = "none";
+	div = document.getElementById("dadosContent");
+	div.display = "visible";
+}
