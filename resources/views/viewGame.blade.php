@@ -2,13 +2,16 @@
 
 <head>
 	<title>In Game</title>
+
 	<link rel="stylesheet" href="../css/inGameStyle.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lemon" />
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
+	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,6 +19,15 @@
 	<div id='game-container' class='game-container'>
 
 	</div>
+	<center>
+		<div id='scene-container' class='scene-container'>
+			<button class='btn-arrow' onclick="BackButton()"><i class="fa fa-arrow-left"></i> Voltar</button>
+			<button class='btn-arrow' style='float:right; margin-right: 5px;' onclick="BackButton()">Desafio <i class="fa fa-arrow-right"></i></button>
+			<div id='editor'>
+				<h3>Scene</h3>
+			</div>
+		</div>
+	</center>
 
 	<script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
 
@@ -30,6 +42,14 @@
 
 		gameLoad(json);
 
+	</script>
+
+	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+	<script>
+		var quill = new Quill('#editor', {
+			readOnly: true
+		});
 	</script>
 
 </body>

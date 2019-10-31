@@ -10,6 +10,11 @@ window.gameLoad = function(json){
 
 	document.getElementById('game-container').style.width = width;
 	document.getElementById('game-container').style.height = height;
+	document.getElementById('game-container').style.display = 'block';
+
+	document.getElementById('scene-container').style.width = width;
+	document.getElementById('scene-container').style.height = height;
+	document.getElementById('scene-container').style.display = 'none';
 
 	var text = document.getElementById('journeyName').innerHTML = "Bem vindo a Jornada " + journeyName;
 
@@ -47,4 +52,9 @@ window.gameLoad = function(json){
 
 		journey.addScene(scene);
 	}
+}
+
+function BackButton(){
+	document.getElementById('game-container').style.display = 'block';
+	document.getElementById('scene-container').style.display = 'none';
 }

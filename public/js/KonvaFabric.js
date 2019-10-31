@@ -17,7 +17,9 @@ class KonvaFabric{
 
 	static setClickEvent(circle, scene){
 		circle.on('click', function(){
-			scene.openSceneModal();
+			document.getElementById('game-container').style.display = 'none';
+			document.getElementById('scene-container').style.display = 'block';
+			scene.OpenScene();
 		});
 	}
 }
