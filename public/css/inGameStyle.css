@@ -18,6 +18,14 @@ body {
 	text-align: left;
 }
 
+.desafio-container{
+	background-color: #fff;
+  	border-color: #000;
+  	border-width: 1px;
+	border-style: solid;
+	text-align: left;
+}
+
 .journeyName{
 	font-family: Lemon;
 }

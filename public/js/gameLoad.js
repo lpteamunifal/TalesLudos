@@ -7,6 +7,7 @@ window.gameLoad = function(json){
 	var width = json.width;
 	var height = json.height;
 	var scenes = json.scenes;
+	var desafio = json.scenes[0].challenge[0].data.answer;
 
 	document.getElementById('game-container').style.width = width;
 	document.getElementById('game-container').style.height = height;
@@ -15,6 +16,10 @@ window.gameLoad = function(json){
 	document.getElementById('scene-container').style.width = width;
 	document.getElementById('scene-container').style.height = height;
 	document.getElementById('scene-container').style.display = 'none';
+	
+	document.getElementById('desafio-container').style.width = width;
+	document.getElementById('desafio-container').style.height = height;
+	document.getElementById('desafio-container').style.display = 'none';
 
 	var text = document.getElementById('journeyName').innerHTML = "Bem vindo a Jornada " + journeyName;
 
@@ -57,9 +62,13 @@ window.gameLoad = function(json){
 function BackButton(){
 	document.getElementById('game-container').style.display = 'block';
 	document.getElementById('scene-container').style.display = 'none';
+	document.getElementById('desafio-container').style.display = 'none';
+
 }
 
 function DesafioButton(){
 	document.getElementById('desafio-container').style.display = 'block';
 	document.getElementById('scene-container').style.display = 'none';
+	document.getElementById('game-container').style.display = 'none';
+
 }

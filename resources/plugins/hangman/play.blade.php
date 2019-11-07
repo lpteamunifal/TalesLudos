@@ -1,33 +1,34 @@
 <div>
-    <link rel="stylesheet" href="{{$path}}pluginStyle.css">
+    <link rel="stylesheet" href="{{asset($path.'playStyle.css')}}">
+
+
 
 	<h1 class="title">
 	Jogo da Forca 
 	</h1>
-	<h2 class="subtitle">
-	Adivinhe a palavra!
-	</h2>
+	
 
-    <div id="hang-game" class="row" style="width: inherit">
-		<div class="col-3">
-			<div class="input-row">
+	
+	<div>
+		<h3 rows="1" id="dica">Dica: Heroína Francesa que atuou na Guerra dos Cem Anos.</h3>
+	</div>
+	
+    <div id="hang-game">
+		<div style="display:none">
+			<div>
 			  <label for="answer" class="label">Resposta:</label>
 			  <input id="answer" class="textarea" type="text" value="Joana D'Arc"> 
 			  <button id="hangman-ok" class="hang-add-btn">OK</button>
 			</div>
-			
-			<div class="input-row">
-			  <label class="label">Dica:</label><textarea class="textarea" rows="3" id="dica">Heroína Francesa que atuou na Guerra dos Cem Anos.</textarea>
-			</div>
 		</div>
 		
-		<div class="col-3">
-			<div id="hangman-game">
-			<div id="hangman-available-characters">
-				<ul id="hangman-available-characters-list"></ul>
-			</div>
-			<div id="hangman-answer-placeholders"></div>
-			<div id="hangman-notices"></div>
+		<div>
+			<div id="hangman-game" style="padding:10px 40px 30px 100px;">
+				<div id="hangman-available-characters">
+					<ul id="hangman-available-characters-list"></ul>
+				</div>
+				<div id="hangman-answer-placeholders"></div>
+				<div id="hangman-notices"></div>
 			
 			</div>
 			<script type='text/javascript'>
@@ -38,13 +39,12 @@
 			</script>
 		</div>
 		
-		<div id="hangman-figure" class= "col-6">
+		<div id="hangman-figure" style="padding:15px 100px 5px 10px;">
 				<canvas id="hangman-canvas"></canvas>
 		</div>
 		
     </div>
 
-
-    <script src="{{$path}}pluginScript.js"></script>
+    <script src="{{asset($path.'playScript.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </div>

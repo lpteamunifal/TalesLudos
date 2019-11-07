@@ -1,0 +1,128 @@
+h1{ 
+	text-align: center;
+	margin: 5px;
+}
+
+h2{ 
+	text-align: center; 
+	margin: 0px;
+}
+
+h3{ 
+	text-align: center; 
+	text-size:12;
+	margin: 5px;
+	
+}
+
+#hangman-game {
+    clear: both;
+    margin: 0 auto;
+    max-width: 300px;
+    overflow-x: scroll;
+   	float:left;
+}
+
+#hangman-game ul {
+    padding-left: 0;
+	
+}
+
+#hangman-answer-placeholders, #hangman-available-characters {
+    margin: 2px auto;
+    padding: 2px;
+}
+
+#hangman-available-characters-list, #hangman-placeholders, .word-placeholder > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+	
+    
+}
+
+.character-placeholder, .hangman-available-character, .word-placeholder {
+    list-style-type: none !important;
+    margin: 1px 2px;
+    padding: 1px 2px;
+}
+
+.hangman-available-character {
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 2px #888;
+    min-width: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.hangman-available-character.disabled {
+    cursor: not-allowed;
+    opacity: .3;
+}
+
+.word-placeholder {
+    display: flex;
+}
+
+.character-placeholder {
+    align-self: baseline;
+    margin: 2px 0;
+    max-width: s2px;
+    padding: 5px;
+}
+
+.character-placeholder.space {
+    display: none;
+}
+
+.character-placeholder.given {
+    margin: 0;
+    padding: 0;
+}
+
+button#hangman-reset-game {
+    background: #E93B3B;
+	border-color: #E93B3B;
+    color: #fff;
+    padding: 2px 20px;
+    border-radius: 5px;
+    margin: 1px 5px;
+}
+
+#hangman-figure {
+   
+    display: inline-block;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+	float:right;
+	margin-right:60px;
+}
+
+#hangman-canvas {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+@media (min-width: 480px) {
+    #hangman-game {
+        overflow-x: hidden;
+		justify-content:left;
+		
+    }
+}
+
+.hang-add-btn {
+	font-size: 14px;
+	background-color: #b9deff;
+	border-radius: 0px;
+	padding: 6px 10px;
+	vertical-align: middle;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+

@@ -32,6 +32,17 @@
 	<center>
 		<div id='desafio-container' class='desafio-container'>
 			<button class='btn-arrow' onclick="BackButton()"><i class="fa fa-arrow-left"></i> Voltar</button>
+			
+			<div id="p0">
+				@component('hangman'.'.play')
+				
+					@slot('path')
+						./../resources/plugins/hangman/
+					@endslot
+			
+				@endcomponent
+			</div>
+			
 		
 		</div>
 	</center>
