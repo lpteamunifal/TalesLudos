@@ -58,3 +58,8 @@ function BackButton(){
 	document.getElementById('game-container').style.display = 'block';
 	document.getElementById('scene-container').style.display = 'none';
 }
+
+function DesafioButton(){
+	document.getElementById('desafio-container').style.display = 'block';
+	document.getElementById('scene-container').style.display = 'none';
+}

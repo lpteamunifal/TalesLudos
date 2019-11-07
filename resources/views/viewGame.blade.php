@@ -22,10 +22,17 @@
 	<center>
 		<div id='scene-container' class='scene-container'>
 			<button class='btn-arrow' onclick="BackButton()"><i class="fa fa-arrow-left"></i> Voltar</button>
-			<button class='btn-arrow' style='float:right; margin-right: 5px;' onclick="BackButton()">Desafio <i class="fa fa-arrow-right"></i></button>
+			<button class='btn-arrow' style='float:right; margin-right: 5px;' onclick="DesafioButton()">Desafio <i class="fa fa-arrow-right"></i></button>
 			<div id='editor'>
 				<h3>Scene</h3>
 			</div>
+		</div>
+	</center>
+	
+	<center>
+		<div id='desafio-container' class='desafio-container'>
+			<button class='btn-arrow' onclick="BackButton()"><i class="fa fa-arrow-left"></i> Voltar</button>
+		
 		</div>
 	</center>
 
