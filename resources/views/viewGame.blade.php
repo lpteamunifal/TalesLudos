@@ -32,6 +32,7 @@
 	<center>
 		<div id='desafio-container' class='desafio-container'>
 			<button class='btn-arrow' onclick="BackButton()"><i class="fa fa-arrow-left"></i> Voltar</button>
+			<button class='btn-arrow' style='float:right; margin-right: 5px;' onclick="DesafioButton()">Proximo <i class="fa fa-arrow-right"></i></button>
 			
 			<div id="p0">
 				@component('hangman'.'.play')
@@ -49,6 +50,7 @@
 
 	<script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
 
+	<script src='../js/Challenge.js'></script>
 	<script src='../js/Scene.js'></script>
 	<script src='../js/Journey.js'></script>
 	<script src='../js/KonvaFabric.js'></script>

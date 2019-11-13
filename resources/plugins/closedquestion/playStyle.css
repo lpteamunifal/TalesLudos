@@ -1,4 +1,4 @@
-.con-add-btn {
+.pf-add-btn {
 	font-size: 20px;
 	background-color: #b9deff;
 	border-radius: 0px;
@@ -10,11 +10,17 @@
 	transition: 0.5s;
 }
 
-.con-delete-btn{
+.pf-delete-btn{
 	background-color: inherit;
 	border: none;
 	outline: none;
 	cursor: pointer;
 	transition: 0.5s;
 	color: red;
+}
+
+.pf-checkbox-size{
+	width: 15px;
+	height: 15px;
+	vertical-align: middle;
 }

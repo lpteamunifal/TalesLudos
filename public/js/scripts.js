@@ -43,6 +43,7 @@ function openTabScene() {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById("Cena").style.display = "block";
     document.getElementById("CenaTab").className += " active";
+	console.log(journey);
 }
 
 function openTabChallenge(challenge) {

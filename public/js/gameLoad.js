@@ -1,7 +1,10 @@
+var selectedScene;
+
 window.gameLoad = function(json){
 
 	json = JSON.parse(json);
 
+	console.log(json);
 
 	var journeyName = json.name;
 	var width = json.width;
@@ -44,15 +47,11 @@ window.gameLoad = function(json){
 
 		var konvaObject = KonvaFabric.generateSceneToGame(scene.x, scene.y, circle.attrs.radius, circle.attrs.fill);
 
-		var sceneContent = scene.content;
-
 		layer.add(konvaObject);
 		layer.draw();
 
-		scene = new Scene(scene.id, scene.name, konvaObject);
-
-		scene.setContent = sceneContent;
-
+		scene.konvaObject = konvaObject;
+		console.log(scene);
 		KonvaFabric.setClickEvent(konvaObject, scene);
 
 		journey.addScene(scene);
@@ -70,5 +69,6 @@ function DesafioButton(){
 	document.getElementById('desafio-container').style.display = 'block';
 	document.getElementById('scene-container').style.display = 'none';
 	document.getElementById('game-container').style.display = 'none';
-
+	console.log(selectedScene);
+	OpenDesafio(selectedScene.challenge[0]);
 }

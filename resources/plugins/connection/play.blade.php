@@ -1,14 +1,11 @@
 <div>
-    <link rel="stylesheet" href="{{$path}}pluginStyle.css">
+    <link rel="stylesheet" href="{{asset($path.'playStyle.css')}}>
 
-    <h1>Ligue os Pontos</h1>
-    <br>
-    <label>Descrição:</label><br>
-    <textarea type="text" rows="4" style="width: 100%"></textarea><br>
-
+    <h1 style="text-align:center">Ligue os Pontos</h1>
+    <h4 style="text-align:center">Aqui estará a Descrição do Jogo ou qualquer coisa que o professor queira colocar, seja um parágrafo de explicação ou sei lá.</h4>
     <br>
 
-    <label>Conecções:</label><br>
+    <h4 style="background-color: red">Ligue:</h4><br>
     <div id="connections" style="text-align: center">
         <div class="row" style="width: inherit">
 			<div class="col-2"></div>
@@ -21,7 +18,6 @@
 			<div class="col-2">
 				<p>Vermelho</p>
 			</div>
-			<button class="con-delete-btn" onclick="deleteOption(event)">X</button>
         </div>
 		<div class="row" style="width: inherit">
 			<div class="col-2"></div>
@@ -34,14 +30,14 @@
 			<div class="col-2">
 				<p>Roxo</p>
 			</div>
-			<button class="con-delete-btn" onclick="deleteOption(event)">X</button>
+			
         </div>
     </div>
     <br>
 
-    <input id="addInput1" type="text" style="width: 40%"> liga a <input id="addInput2" type="text" style="width: 40%">
-    <button id="btnAddInput1" class="con-add-btn" onclick="connectionAddOption()">+</button><br>
+    
+    
 
-    <script src="{{$path}}pluginScript.js"></script>
+    <script src="{{asset($path.'playScript.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </div>

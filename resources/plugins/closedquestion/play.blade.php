@@ -1,5 +1,5 @@
 <div>
-    <link rel="stylesheet" href="{{$path}}pluginStyle.css">
+    <link rel="stylesheet" href="{{asset($path.'playStyle.css')}}">
 
     <h1>Pergunta fechada</h1>
     <br>
@@ -22,6 +22,6 @@
     <input id="addInput" type="text" style="width: 94%">
     <button id="btnAddInput" class="pf-add-btn" onclick="addOption()">+</button><br>
 
-    <script src="{{$path}}pluginScript.js"></script>
+    <script src="{{asset($path.'playScript.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </div>

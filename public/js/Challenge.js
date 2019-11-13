@@ -18,3 +18,7 @@ class Challenge {
     }
 	
 }
+
+function OpenDesafio(desafio){
+	LoadData(desafio.data);
+}

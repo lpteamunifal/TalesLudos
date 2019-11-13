@@ -14,23 +14,26 @@ class DataHangman{
     this.dica = dica.value;
   }
   
-  LoadData(){
-    var i = document.getElementById("answer");
-    i.value = this.answer;
-    console.log(i.value);
-    console.log(this.answer);
-    var dica = document.getElementById("dica");
-    dica.value = this.dica;	
-	
+  
+}
+
+function LoadData(data){
+	answer = data.answer;
+	console.log(answer);
+	console.log(data.answer);   
+	dica = data.dica;		
 	//document.getElementById("hangman-ok").click();
 	AtualizaFuncao();
-  }
 } 
 
 function hangman(){
   return new DataHangman();
 }
 
+
+
+var answer = "";
+var dica = "";
 
 const availableChars = [
 	'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -39,8 +42,7 @@ const availableChars = [
   ],
   maxGuesses = 10;
   
-  var answer = document.getElementById('answer').value,
-  answerChars = getAnswerChars(),
+var answerChars = getAnswerChars(),
   //toUpperCase = Converte a resposta para maiúscula e a retorna. 
   placeholderChars = answer.toUpperCase().split(''),		  
   availableCharsSelector = document.getElementById(
@@ -50,7 +52,6 @@ const availableChars = [
 	  'hangman-answer-placeholders'),
 	  
   noticesSelector = document.getElementById('hangman-notices'),
-  okSelector = document.getElementById('hangman-ok'),
   canvasSelector = document.getElementById('hangman-canvas'),
   canvasContext = canvasSelector.getContext('2d'),
   stickmanCoordinates = [
@@ -411,23 +412,6 @@ function resetGame() {
 	misses = 0;
 }
 
-
-  
-function ChoseAnswer() {
-okSelector.addEventListener('click', function(event) {    
-   // answer = document.getElementById('answer').value;
-	//renderEmptyPlaceholders();
-	updateName();
-	renderEmptyPlaceholders();
-	getCharacterPlaceholderElements();
-	//addGuessListener();
-	addResetListener();
-	setupCanvas();;
-	resetGame();
-	
-});
-}
-
 function AtualizaFuncao(){
 	updateName();
 	renderEmptyPlaceholders();
@@ -439,31 +423,16 @@ function AtualizaFuncao(){
 }
 
 function updateName() {
-	answer = document.getElementById("answer").value;
+	//answer = document.getElementById("answer").value;
 	answerChars = getAnswerChars();		  
 	placeholderChars = answer.toUpperCase().split('');
 	console.log(answer);
 
 } 
 
-function Imput() {
-	var input = document.getElementById("answer");
-	// Execute a function when the user releases a key on the keyboard
-	input1.addEventListener("keyup", function (event) {
-		// Number 13 is the "Enter" key on the keyboard
-		if (event.keyCode === 13) {
-			// Cancel the default action, if needed
-			event.preventDefault();
-			// Trigger the button element with a click
-			document.getElementById("btnAddInput").click();
-			
-		}
-	});
-}
-
 
 function init() {
-	ChoseAnswer(); 
+	//ChoseAnswer(); 
 	renderAvailableChars();
 	renderEmptyPlaceholders();
 	getCharacterPlaceholderElements();
