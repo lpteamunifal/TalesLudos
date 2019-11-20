@@ -16,9 +16,8 @@ class Challenge {
     set setName(name){
         this.name = name;
     }
-	
-}
-
-function OpenDesafio(desafio){
-	LoadData(desafio.data);
+    
+    OpenDesafio(){
+        data.LoadData();
+    }
 }
