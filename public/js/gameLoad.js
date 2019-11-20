@@ -10,6 +10,7 @@ window.gameLoad = function(json){
 	var width = json.width;
 	var height = json.height;
 	var scenes = json.scenes;
+	var desafio = json.scenes[0].challenge[0].data.answer;
 
 	document.getElementById('game-container').style.width = width;
 	document.getElementById('game-container').style.height = height;
@@ -40,30 +41,16 @@ window.gameLoad = function(json){
 	var i;
 
 	for(i = 0 ; i < scenes.length; i++){
-		var scenej = scenes[i];
+		var scene = scenes[i];
 
-		var circle = JSON.parse(scenej.circle[0]);
+		var circle = JSON.parse(scene.circle[0]);
 
-		var konvaObject = KonvaFabric.generateSceneToGame(scenej.x, scenej.y, circle.attrs.radius, circle.attrs.fill);
+		var konvaObject = KonvaFabric.generateSceneToGame(scene.x, scene.y, circle.attrs.radius, circle.attrs.fill);
 
 		layer.add(konvaObject);
 		layer.draw();
 
-		var scene = new Scene(scenej.id, scenej.name, konvaObject);
-		scene.content = scenej.content;
-		scene.challenge = [];
-		console.log(pluginList);
-
-		if (scenej.challenge != null){
-			for(var j = 0; j < scenej.challenge.length; j++){
-				var cj = scenej.challenge[j];
-				var challenge = new Challenge(cj.id, cj.name);
-				challenge.plugin = cj.plugin;
-				challenge.data = eval(pluginList[cj.plugin.substring(1)])(cj.data);
-				scene.challenge.push(challenge);
-			}
-		}
-
+		scene.konvaObject = konvaObject;
 		console.log(scene);
 		KonvaFabric.setClickEvent(konvaObject, scene);
 
@@ -82,11 +69,6 @@ function DesafioButton(){
 	document.getElementById('desafio-container').style.display = 'block';
 	document.getElementById('scene-container').style.display = 'none';
 	document.getElementById('game-container').style.display = 'none';
-
-	for(var i = 0; i < pluginList.length; i++){
-		document.getElementById('p' + i).style.display = 'none';
-	}
-	document.getElementById(selectedScene.challenge[0].plugin).style.display = 'block';
-
-	selectedScene.challenge[0].OpenDesafio();
+	console.log(selectedScene);
+	OpenDesafio(selectedScene.challenge[0]);
 }

@@ -1,8 +1,8 @@
 class DataHangman{
-  constructor(data) {
-    this.plugin = data.plugin;
-    this.answer = data.answer;
-    this.dica = data.dica;
+  constructor() {
+    this.plugin = "hangman";
+    this.answer = "Joana D'Arc";
+    this.dica = "Heroína francesa";
   }
   
   SaveData(){
@@ -14,20 +14,21 @@ class DataHangman{
     this.dica = dica.value;
   }
   
-
-  LoadData(){
-	//answer = this.answer;
-	//console.log(answer);
-	//console.log(this.answer);   
-	//dica = this.dica;		
+  LoadData(data){
+	answer = data.answer;
+	console.log(answer);
+	console.log(data.answer);   
+	dica = data.dica;		
 	//document.getElementById("hangman-ok").click();
 	AtualizaFuncao();
-  } 
+  }
+  
 }
 
+ 
 
-function hangman(data){
-  return new DataHangman(data);
+function hangman(){
+  return new DataHangman();
 }
 
 
