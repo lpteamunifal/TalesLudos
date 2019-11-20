@@ -283,10 +283,10 @@ function validateCurrentGuess(currentGuess) {
 	  return;
 	}
 
-	if (!isValidChar(currentGuess) || guessedChars.includes(currentGuess)) {
+	/* if (!isValidChar(currentGuess) || guessedChars.includes(currentGuess)) {
 	  console.log('Invalid guess');
 	  return;
-	} 
+	} */
 		
 	
 	guessedChars.push(currentGuess);

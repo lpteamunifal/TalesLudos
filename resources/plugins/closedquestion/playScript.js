@@ -19,23 +19,21 @@ class DataClosed {
 	}
 
 	LoadData(){
-		question = document.getElementById("closed-question");
-		question.value = data.question;
+		var question = document.getElementById("closed-question");
+		question.value = this.question;
 
 		document.getElementById("options").innerHTML = "";
 
-		for(var i = 0; i < data.answers.length; i++){
+		for(var i = 0; i < this.answers.length; i++){
 			var text = "<div style=\"width: inherit\">";
-			text += "<label><input class=\"pf-checkbox-size\" type=\"radio\" name=\"alternativa\" value=\"op1\"> " + data.answers[i] + "</label>";
+			text += "<button class=\"pf-delete-btn\" onclick=\"deleteOption(event)\">X</button>";
+			text += "<label><input class=\"pf-checkbox-size\" type=\"checkbox\" name=\"alternativa\" value=\"op1\"> " + this.answers[i] + "</label>";
 			text += "<br>";
 			text += "</div>";
 			$('#options').append(text);
 		}
 	}
 }
-
-var question = "";
-var answers = "";
 
 function closedquestion(){
 	return new DataClosed();
