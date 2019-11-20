@@ -14,17 +14,18 @@ class DataHangman{
     this.dica = dica.value;
   }
   
-  
-}
-
-function LoadData(data){
+  LoadData(data){
 	answer = data.answer;
 	console.log(answer);
 	console.log(data.answer);   
 	dica = data.dica;		
 	//document.getElementById("hangman-ok").click();
 	AtualizaFuncao();
-} 
+  }
+  
+}
+
+ 
 
 function hangman(){
   return new DataHangman();
