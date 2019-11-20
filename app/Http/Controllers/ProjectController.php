@@ -28,6 +28,9 @@ class ProjectController extends Controller
 	}
 
 	public function viewGame($data){
-		return view('viewGame', compact('data'));
+		$plugins = scandir('./../resources/plugins/');
+		$dir = array_shift($plugins);
+		$dir = array_shift($plugins);
+		return view('viewGame', compact('data'), compact('plugins'));
 	}
 }

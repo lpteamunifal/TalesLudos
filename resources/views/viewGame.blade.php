@@ -34,19 +34,29 @@
 			<button class='btn-arrow' onclick="BackButton()"><i class="fa fa-arrow-left"></i> Voltar</button>
 			<button class='btn-arrow' style='float:right; margin-right: 5px;' onclick="DesafioButton()">Proximo <i class="fa fa-arrow-right"></i></button>
 			
-			<div id="p0">
-				@component('hangman'.'.play')
+			<?php
+				$dirs = scandir('./../resources/plugins/');
+				$dir = array_shift($dirs);
+				$dir = array_shift($dirs);
+			?>
+			@for ($i = 0; $i < count($dirs); $i++)
+				<div id="p{{ $i }}">
+					@component($dirs[$i].'.play')
+					
+						@slot('path')
+							./../resources/plugins/{{$dirs[$i]}}/
+						@endslot
 				
-					@slot('path')
-						./../resources/plugins/hangman/
-					@endslot
-			
-				@endcomponent
-			</div>
-			
+					@endcomponent
+				</div>
+			@endfor
 		
 		</div>
 	</center>
+
+	<script>
+		var pluginList = {!! json_encode($plugins) !!};
+	</script>
 
 	<script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
 

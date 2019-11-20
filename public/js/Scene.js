@@ -158,9 +158,9 @@ class Scene {
 
         this.modal = "";
     }
-}
 
-function OpenScene(scene){
-	document.getElementsByClassName('ql-editor')[0].innerHTML = scene.content;
-	console.log(scene.content);
+    OpenScene(){
+        document.getElementsByClassName('ql-editor')[0].innerHTML = this.content;
+        console.log(this.content);
+    }
 }
