@@ -19,7 +19,7 @@ class KonvaFabric{
 		circle.on('click', function(){
 			document.getElementById('game-container').style.display = 'none';
 			document.getElementById('scene-container').style.display = 'block';
-			OpenScene(scene);
+			scene.OpenScene();
 			selectedScene = scene;
 		});
 	}

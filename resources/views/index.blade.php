@@ -11,8 +11,8 @@
 </head>
 <body class="container-fluid">
 	<div class="topnav">
-		<a class="active" href="#home">Home</a> <a href="#news">Repositório</a>
-		<a href="#contact">Meus Projetos</a> <a href="#about">Contato</a>
+		<a class="active" href="#home">Home</a> <a href="#rep">Repositório</a>
+		<a href="#projects">Meus Projetos</a> <a href="#contact">Contato</a>
 
 		@if(Auth::check())
 			<div class='logged'> Olá, {{ Auth::user()->name." ".Auth::user()->last_name }}</div>
@@ -187,8 +187,8 @@
 				@endif
 				{!! Form::open(['url' => './login']) !!}
 
-				{!! Form::label('email', 'Email') !!}
-				{!! Form::input('text', 'email', Input::old('email'), ['class' => 'form-control', 'placeholder' => 'email@email.com']) !!}
+				{!! Form::label('email', 'E-mail') !!}
+				{!! Form::input('text', 'email', Input::old('email'), ['class' => 'form-control', 'placeholder' => 'e-mail@email.com']) !!}
 
 				{!! Form::label('password', 'Senha') !!}
 				{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Senha']) !!}
@@ -235,8 +235,8 @@
 					{!! Form::label('last_name', 'Sobrenome') !!}
 					{!! Form::input('text', 'last_name', Input::old('last_name'), ['class' => 'form-control', 'placeholder' => 'Sobrenome']) !!}
 
-					{!! Form::label('email', 'Email') !!}
-					{!! Form::input('text', 'email', Input::old('email'), ['class' => 'form-control', 'placeholder' => 'email@email.com']) !!}
+					{!! Form::label('email', 'E-mail') !!}
+					{!! Form::input('text', 'email', Input::old('email'), ['class' => 'form-control', 'placeholder' => 'e-mail@email.com']) !!}
 
 					{!! Form::label('password', 'Senha') !!}
 					{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Senha']) !!}
