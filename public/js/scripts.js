@@ -253,7 +253,7 @@ function addDesafio(evt, selector) {
     $('#' + selector).append(textBlock);
 	
 	var desafio = new Challenge(numeroDesafio, 'd' + numeroDesafio);
-	desafio.data = window[pluginList[0]]();
+    desafio.data = eval(pluginList[0])();
 	scene.addChallenge(desafio);
 }
 
