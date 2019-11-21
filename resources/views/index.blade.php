@@ -302,15 +302,20 @@
 	<script src='./js/konvaScripts.js'></script>
 
 	<script>
-			function openViewOfGame(){
-			    var encondedGame = btoa(JSON.stringify(journey));
-
-			    var url = '{{URL::to("viewGame",":data")}}';
-
-			    url = url.replace('%3Adata', encondedGame)
-
-			    window.open(url);
+		function openViewOfGame(){
+			saveText();
+			if(selectedChallenge != null){
+				selectedChallenge.data.SaveData();
 			}
+
+			var encondedGame = btoa(JSON.stringify(journey));
+
+			var url = '{{URL::to("viewGame",":data")}}';
+
+			url = url.replace('%3Adata', encondedGame)
+
+			window.open(url);
+		}
 	</script>
 
 

@@ -10,10 +10,12 @@ class DataClosed {
 		var question = document.getElementById("closed-question");
 		this.question = question.value;
 
+		this.answers = [];
+
 		var options = document.getElementById("options");
 		var labels = options.getElementsByTagName("label");
-		for(var i = 0; i < options.length; i++){
-			this.answers.push(options.value);
+		for(var i = 0; i < labels.length; i++){
+			this.answers.push(labels[i].innerHTML);
 		}
 		console.log(labels);
 	}

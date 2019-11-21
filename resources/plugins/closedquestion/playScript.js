@@ -1,9 +1,9 @@
 class DataClosed {
-	constructor() {
+	constructor(data) {
 		this.plugin = "closedquestion";
-        this.question = "Aqui é a pergunta fechada";
-		this.answers = [];
-		this.correct = 0;
+        this.question = data.question;
+		this.answers = data.answers;
+		this.correct = data.correct;
     }
 
 	SaveData(){
@@ -20,61 +20,31 @@ class DataClosed {
 
 	LoadData(){
 		var question = document.getElementById("closed-question");
-		question.value = this.question;
+		question.innerHTML = this.question;
 
 		document.getElementById("options").innerHTML = "";
 
 		for(var i = 0; i < this.answers.length; i++){
 			var text = "<div style=\"width: inherit\">";
-			text += "<button class=\"pf-delete-btn\" onclick=\"deleteOption(event)\">X</button>";
-			text += "<label><input class=\"pf-checkbox-size\" type=\"checkbox\" name=\"alternativa\" value=\"op1\"> " + this.answers[i] + "</label>";
+			text += "<label>" + this.answers[i] + "</label>";
 			text += "<br>";
 			text += "</div>";
 			$('#options').append(text);
 		}
+
+		var options = document.getElementById("options");
+		var inputs = options.getElementsByTagName("input");
+		for(var i = 0; i < inputs.length; i++){
+			inputs[i].type = "radio";
+		}
 	}
 }
 
-function closedquestion(){
-	return new DataClosed();
+function closedquestion(data){
+	return new DataClosed(data);
 }
 
 
 function getPoints() {
     return 10;
-}
-
-function addOption() {
-    var input = document.getElementById("addInput");
-	if(input.value != ""){
-		var text = "<div style=\"width: inherit\">";
-		text += "<button class=\"pf-delete-btn\" onclick=\"deleteOption(event)\">X</button>";
-		text += "<label><input class=\"pf-checkbox-size\" type=\"checkbox\" name=\"alternativa\" value=\"op1\"> " + input.value + "</label>";
-		text += "<br>";
-		text += "</div>";
-
-		console.log(text);
-
-		input.value = "";
-		$('#options').append(text);
-	}
-}
-
-window.onload = function() {
-    var input = document.getElementById("addInput");
-    // Execute a function when the user releases a key on the keyboard
-    input.addEventListener("keyup", function (event) {
-        // Number 13 is the "Enter" key on the keyboard
-        if (event.keyCode === 13) {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click
-            document.getElementById("btnAddInput").click();
-        }
-    });
-}
-
-function deleteOption(evt){
-    var p = evt.currentTarget.parentNode;
-    p.parentNode.removeChild(p);
 }

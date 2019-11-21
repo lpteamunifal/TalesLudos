@@ -40,7 +40,7 @@
 				$dir = array_shift($dirs);
 			?>
 			@for ($i = 0; $i < count($dirs); $i++)
-				<div id="p{{ $i }}">
+				<div id="p{{ $i }}" style="display: none">
 					@component($dirs[$i].'.play')
 					
 						@slot('path')

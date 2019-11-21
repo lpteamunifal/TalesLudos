@@ -145,8 +145,10 @@ var sel = 'c1';
 
 function saveText() {
     var s = journey.getSceneByName(sel);
-    var text = document.getElementsByClassName("ql-editor")[0].innerHTML;
-    s.setContent = text;
+    if (s != null) {
+        var text = document.getElementsByClassName("ql-editor")[0].innerHTML;
+        s.setContent = text;
+    }
 }
 
 function loadText(scene) {

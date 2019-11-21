@@ -21,7 +21,6 @@ class DataHangman{
 	document.getElementById("dica").innerHTML = "Dica: " + this.dica;		
 	//document.getElementById("hangman-ok").click();
 	AtualizaFuncao();
-	console.log("Aqui");
   } 
 }
 

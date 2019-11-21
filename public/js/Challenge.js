@@ -19,6 +19,5 @@ class Challenge {
     
     OpenDesafio(){
         this.data.LoadData();
-        console.log("Aqui");
     }
 }
