@@ -15,12 +15,13 @@ class DataHangman{
   }
   
   LoadData(){
-	//answer = this.answer;
+	answer = this.answer;
 	//console.log(answer);
 	//console.log(this.answer);   
-	//dica = this.dica;		
+	document.getElementById("dica").innerHTML = "Dica: " + this.dica;		
 	//document.getElementById("hangman-ok").click();
 	AtualizaFuncao();
+	console.log("Aqui");
   } 
 }
 
