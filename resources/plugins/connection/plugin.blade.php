@@ -1,5 +1,5 @@
 <div>
-    <link rel="stylesheet" href="{{$path}}playStyle.css">
+    <link rel="stylesheet" href="{{asset($path.'pluginStyle.css')}}">
 
     <h1>Ligue os Pontos</h1>
     <br>
@@ -42,6 +42,6 @@
     <input id="addInput1" type="text" style="width: 40%"> liga a <input id="addInput2" type="text" style="width: 40%">
     <button id="btnAddInput1" class="con-add-btn" onclick="connectionAddOption()">+</button><br>
 
-    <script src="{{$path}}playScript.js"></script>
+    <script src="{{asset($path.'pluginScript.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </div>

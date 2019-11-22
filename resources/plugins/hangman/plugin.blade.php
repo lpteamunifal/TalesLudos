@@ -1,5 +1,5 @@
 <div>
-    <link rel="stylesheet" href="{{$path}}pluginStyle.css">
+    <link rel="stylesheet" href="{{asset($path.'pluginStyle.css')}}">
 
 	<h1 class="title">
 	Jogo da Forca 
@@ -45,6 +45,6 @@
     </div>
 
 
-    <script src="{{$path}}pluginScript.js"></script>
+    <script src="{{asset($path.'pluginScript.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </div>
