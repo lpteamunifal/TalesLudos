@@ -44,7 +44,7 @@
 					@component($dirs[$i].'.play')
 					
 						@slot('path')
-							./../resources/plugins/{{$dirs[$i]}}/
+							./plugins/{{$dirs[$i]}}/
 						@endslot
 				
 					@endcomponent

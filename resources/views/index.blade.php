@@ -142,7 +142,7 @@
 								@component($dirs[$i].'.plugin')
 								
 									@slot('path')
-										./../resources/plugins/{{$dirs[$i]}}/
+										./plugins/{{$dirs[$i]}}/
 									@endslot
 							
 								@endcomponent
