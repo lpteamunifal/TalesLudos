@@ -4,6 +4,16 @@ var stageHeight = document.getElementById('box-jornada').clientHeight;
 var oldGroupClicked = null;
 var newGroupClicked = null;
 
+var gradeMin = 1;
+var gradeMax = 2;
+
+var connection;
+var arrow;
+
+var abort = false;
+
+var wait = true;
+
 window.journeyStage = new Konva.Stage({
 	container: 'box-jornada',
 	width: stageWidth,
@@ -29,6 +39,25 @@ function getConnectorPoints(from, to) {
           (to.x() + -radius * Math.cos(angle) * to.scaleX()),
           (to.y() + radius * Math.sin(angle) * to.scaleY())
         ];
+}
+
+function getGrades(){
+	gradeMin = document.getElementById("gradeMin").value;
+	gradeMax = document.getElementById("gradeMax").value;
+
+	connection.setGradeMin = gradeMin;
+	connection.setGradeMax = gradeMax;
+
+	console.log(connection);
+
+	document.getElementById('gradeModal').remove();
+}
+
+function abortConnection(){
+	connection = null;
+	arrow.destroy();
+	scenesLayer.draw();
+	document.getElementById('gradeModal').remove();
 }
 
 window.addSceneCircleInJourney = function (sceneNumber)
@@ -96,11 +125,31 @@ window.addSceneCircleInJourney = function (sceneNumber)
 				oldGroupClicked = group;
 				newGroupClicked = null;
 			}
-			else
+			else if(oldGroupClicked != group)
 			{
-				newGroupClicked = group;
+				wait = true;
+				var modal;
+
+				modal +=  "<div id='gradeModal' class='modal' style='display:block;'>";
+		        modal +=  "    <div class='modal-content'>";
+		        modal +=  "        <div class='modal-body'>";
+		        modal +=  "				Nota minima: <input type='text' id='gradeMin' value='1'><br>";
+		        modal +=  "				Nota maxima: <input type='text' id='gradeMax' value='2'><br><center>";
+		        modal +=  "				<button class='btn' onclick='getGrades();'>Confirmar</button>";
+		        modal +=  "				<button class='btn red' onclick='abortConnection();'>Cancelar</button></center>";
+		        modal +=  "        </div>";
+		        modal +=  "    </div>";
+		        modal +=  "</div>";
+
+		        var body = document.body;
+		        var children = document.createElement('div');
+
+		        children.innerHTML = modal;
+		        body.appendChild(children);
+
+	        	newGroupClicked = group;
 				var points = getConnectorPoints(oldGroupClicked, newGroupClicked);
-				var arrow = new Konva.Arrow({
+				arrow = new Konva.Arrow({
 					points: points,
 					stroke: 'black',
 					strokeWidth: 2,
@@ -108,7 +157,7 @@ window.addSceneCircleInJourney = function (sceneNumber)
 	      			pointerWidth: 5
 				});
 
-				var connection = new SceneConnection(oldGroupClicked, newGroupClicked, 0, 0, arrow);
+				connection = new SceneConnection(oldGroupClicked, newGroupClicked, gradeMin, gradeMax, arrow);
 
 				var sceneFromId = oldGroupClicked.name();
 				var sceneToId = newGroupClicked.name();
