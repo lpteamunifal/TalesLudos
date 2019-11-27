@@ -35,7 +35,8 @@ $router->group(['middleware' => 'auth'], function() {
 
 $router->group(['middleware' => 'guest'], function() {
     Route::post('/save', "ProjectController@tmpsave");
+    Route::post('/viewGame', "ProjectController@viewGame");
 	Route::get('/view', "ProjectController@view");
-	Route::get('/viewGame/{data}', "ProjectController@viewGame");
+	
 });
 

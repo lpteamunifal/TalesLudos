@@ -55,7 +55,7 @@
 	</center>
 
 	<script>
-		var pluginList = {!! json_encode($plugins) !!};
+		var pluginList = {!! json_encode($plugins, true) !!};
 	</script>
 
 	<script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
@@ -68,7 +68,7 @@
 
 	<script type="text/javascript">
 		
-		var json = atob("{{$data}}");
+		var json = {!! json_encode($data, true) !!};
 
 		gameLoad(json);
 

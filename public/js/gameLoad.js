@@ -2,10 +2,6 @@ var selectedScene;
 
 window.gameLoad = function(json){
 
-	json = JSON.parse(json);
-
-	console.log(json);
-
 	var journeyName = json.name;
 	var width = json.width;
 	var height = json.height;

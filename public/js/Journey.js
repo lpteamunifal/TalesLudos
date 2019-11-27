@@ -83,7 +83,22 @@ class Journey {
     deleteSceneByName(name){
         for(var i = 0; i < this.scenes.length; i++){
             if(this.scenes[i].getName == name){
-                this.scenes.splice(i, 1);
+                var scene = this.scenes[i];
+                var connections = scene.getNextScenes;
+                connections.forEach(function(conn){
+                    var arrow = conn.getKonvaArrow;
+                    arrow.destroy();
+                    conn = null;
+                });
+                connections = [];
+                connections = scene.getPreviousScenes;
+                connections.forEach(function(conn){
+                    var arrow = conn.getKonvaArrow;
+                    arrow.destroy();
+                    conn = null;
+                });
+                connections = [];
+                scene = null;
                 return true;
             }
         }

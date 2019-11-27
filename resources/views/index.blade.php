@@ -308,13 +308,21 @@
 				selectedChallenge.data.SaveData();
 			}
 
-			var encondedGame = btoa(JSON.stringify(journey));
-
-			var url = '{{URL::to("viewGame",":data")}}';
-
-			url = url.replace('%3Adata', encondedGame)
-
-			window.open(url);
+			$.ajax({
+			    type: "POST",
+			    url: "./viewGame",
+			    data: JSON.stringify(journey),
+			    contentType: "json",
+			    success:function(data){
+			    	var w = window.open();
+				    w.document.open();
+				    w.document.write(data);
+				    w.document.close();
+			    },
+			    error:function(data){
+			    	console.log(data);
+			    }
+			});
 		}
 	</script>
 
