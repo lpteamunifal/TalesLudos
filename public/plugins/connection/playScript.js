@@ -49,32 +49,6 @@ function connectionAddOption() {
 	}
 }
 
-window.onload = function() {
-    var input1 = document.getElementById("addInput1");
-    // Execute a function when the user releases a key on the keyboard
-    input1.addEventListener("keyup", function (event) {
-        // Number 13 is the "Enter" key on the keyboard
-        if (event.keyCode === 13) {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click
-            document.getElementById("btnAddInput1").click();
-        }
-    });
-	
-	var input2 = document.getElementById("addInput2");
-    // Execute a function when the user releases a key on the keyboard
-    input2.addEventListener("keyup", function (event) {
-        // Number 13 is the "Enter" key on the keyboard
-        if (event.keyCode === 13) {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click
-            document.getElementById("btnAddInput1").click();
-        }
-    });
-}
-
 function deleteOption(evt){
     var p = evt.currentTarget.parentNode;
     p.parentNode.removeChild(p);

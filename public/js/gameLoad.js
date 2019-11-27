@@ -72,17 +72,24 @@ function BackButton(){
 	document.getElementById('scene-container').style.display = 'none';
 	document.getElementById('desafio-container').style.display = 'none';
 
+	challengeNumber = 0;
 }
 
+var challengeNumber = 0;
+
 function DesafioButton(){
-	document.getElementById('desafio-container').style.display = 'block';
-	document.getElementById('scene-container').style.display = 'none';
-	document.getElementById('game-container').style.display = 'none';
+	if (challengeNumber < selectedScene.challenge.length) {
+		document.getElementById('desafio-container').style.display = 'block';
+		document.getElementById('scene-container').style.display = 'none';
+		document.getElementById('game-container').style.display = 'none';
 
-	for(var i = 0; i < pluginList.length; i++){
-		document.getElementById('p' + i).style.display = 'none';
+		for(var i = 0; i < pluginList.length; i++){
+			document.getElementById('p' + i).style.display = 'none';
+		}
+		document.getElementById(selectedScene.challenge[challengeNumber].plugin).style.display = 'block';
+
+		selectedScene.challenge[challengeNumber].OpenDesafio();
+
+		challengeNumber++;
 	}
-	document.getElementById(selectedScene.challenge[0].plugin).style.display = 'block';
-
-	selectedScene.challenge[0].OpenDesafio();
 }
