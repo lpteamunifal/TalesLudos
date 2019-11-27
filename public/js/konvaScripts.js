@@ -157,6 +157,12 @@ window.addSceneCircleInJourney = function (sceneNumber)
 	      			pointerWidth: 5
 				});
 
+				arrow.on('dblclick', function(){
+					connection = null;
+					arrow.destroy();
+					scenesLayer.draw();
+				});
+
 				connection = new SceneConnection(oldGroupClicked, newGroupClicked, gradeMin, gradeMax, arrow);
 
 				var sceneFromId = oldGroupClicked.name();
